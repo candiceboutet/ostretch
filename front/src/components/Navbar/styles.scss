@@ -1,0 +1,47 @@
+.nav-container{
+    width: 80%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+	align-items: center;
+    border-radius: 20px;
+    background-color: #EAE2F7;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+img{
+    height: 75%;
+}
+.home{
+    margin-right: 20px;
+    color: black;
+    outline: none;
+  text-decoration: none;
+}
+.stretches{
+    padding-left: 20px;
+    color: black;
+    outline: none;
+  text-decoration: none;
+}
+.login-profile{
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+.login{
+    color: black;
+    outline: none;
+  text-decoration: none; 
+}
+.space {
+    color: black;
+    outline: none;
+  text-decoration: none;
+  padding-left: 10px;
+}
+.user{
+    transform: translateY(15%);
+ margin-left: 15px;
+ padding-right: 5px;
+}
