@@ -5,7 +5,7 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import './styles.scss';
 
 const Navbar = () => {
-    const [isLogged, setIsLogged] = useState(true)
+    const [isLogged, setIsLogged] = useState(false)
     return (
         <div className="nav-container">
             <img src={logo} alt="OStretch logo" />
