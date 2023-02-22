@@ -1,47 +1,71 @@
-.nav-container{
-    width: 80%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-	align-items: center;
-    border-radius: 20px;
-    background-color: #EAE2F7;
-    padding-left: 40px;
-    padding-right: 40px;
+@import '../../styles/vars';
+
+.nav-container {
+  width: 80%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #EAE2F7;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-shadow: $box-shadow;
 }
-img{
-    height: 75%;
+
+img {
+  height: 75%;
+
+  &:hover {
+    animation: spin 2s linear infinite;
+  }
 }
-.home{
-    margin-right: 20px;
-    color: black;
-    outline: none;
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.home {
+  margin-right: 20px;
+  color: black;
+  outline: none;
   text-decoration: none;
 }
-.stretches{
-    padding-left: 20px;
-    color: black;
-    outline: none;
+
+.stretches {
+  padding-left: 20px;
+  color: black;
+  outline: none;
   text-decoration: none;
 }
-.login-profile{
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
+
+.login-profile {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
 }
-.login{
-    color: black;
-    outline: none;
-  text-decoration: none; 
+
+.login {
+  color: black;
+  outline: none;
+  text-decoration: none;
 }
+
 .space {
-    color: black;
-    outline: none;
+  color: black;
+  outline: none;
   text-decoration: none;
   padding-left: 10px;
 }
-.user{
-    transform: translateY(15%);
- margin-left: 15px;
- padding-right: 5px;
+
+.user {
+  transform: translateY(15%);
+  margin-left: 15px;
+  padding-right: 5px;
 }
