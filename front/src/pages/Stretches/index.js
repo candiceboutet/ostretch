@@ -30,7 +30,7 @@ const Stretches = () => {
                         <h2>Haut du corps</h2>
                         <ul>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -44,7 +44,7 @@ const Stretches = () => {
                                 />
                             </a>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -58,7 +58,7 @@ const Stretches = () => {
                                 />
                             </a>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -72,7 +72,7 @@ const Stretches = () => {
                                 />
                             </a>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -97,7 +97,7 @@ const Stretches = () => {
                         <h2>Dos</h2>
                         <ul>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -111,7 +111,7 @@ const Stretches = () => {
                                 />
                             </a>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -125,7 +125,7 @@ const Stretches = () => {
                                 />
                             </a>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -139,7 +139,7 @@ const Stretches = () => {
                                 />
                             </a>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -164,7 +164,7 @@ const Stretches = () => {
                         <h2>Jambes</h2>
                         <ul>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -178,7 +178,7 @@ const Stretches = () => {
                                 />
                             </a>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -192,7 +192,7 @@ const Stretches = () => {
                                 />
                             </a>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>
@@ -206,7 +206,7 @@ const Stretches = () => {
                                 />
                             </a>
 
-                            <a href='/' className="card">
+                            <a href="/stretch" className="card">
                                 <div>
                                     <h3>Nom de l'étirement</h3>
                                     <p>

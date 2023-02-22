@@ -1,7 +1,8 @@
 @import '../../styles/vars';
 
 .nav-container {
-  width: 80%;
+  margin: auto;
+  width: 90%;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -11,13 +12,13 @@
   padding-left: 40px;
   padding-right: 40px;
   box-shadow: $box-shadow;
-}
 
-img {
-  height: 75%;
-
-  &:hover {
-    animation: spin 2s linear infinite;
+  & img {
+    height: 75%;
+  
+    &:hover {
+      animation: spin 2s linear infinite;
+    }
   }
 }
 
