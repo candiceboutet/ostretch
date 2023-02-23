@@ -19,7 +19,7 @@ const Navbar = () => {
             </ul>
             <div className='login-profile'>
             {
-                isLogged ? <NavLink to="/my-space" className="space">Mon espace <FaRegUserCircle className='user' /></NavLink> : <NavLink to="/login" className="login">Login</NavLink>
+                isLogged ?  <FaRegUserCircle className='user' /> : <NavLink to="/login" className="login">Login</NavLink>
             }
             </div>
         

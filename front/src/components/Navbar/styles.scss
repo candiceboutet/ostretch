@@ -8,6 +8,7 @@
     background-color: #EAE2F7;
     padding-left: 40px;
     padding-right: 40px;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.1);
 }
 img{
     height: 75%;
@@ -25,14 +26,14 @@ img{
   text-decoration: none;
 }
 .login-profile{
-    padding: 10px;
+    padding: 5px;
     background-color: white;
     border-radius: 10px;
 }
 .login{
     color: black;
     outline: none;
-  text-decoration: none; 
+    text-decoration: none; 
 }
 .space {
     color: black;
@@ -42,6 +43,6 @@ img{
 }
 .user{
     transform: translateY(15%);
- margin-left: 15px;
- padding-right: 5px;
+    width: 40px;
+    cursor: pointer;
 }
