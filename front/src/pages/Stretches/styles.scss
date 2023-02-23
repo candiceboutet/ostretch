@@ -1,0 +1,123 @@
+@import '../../styles/vars';
+
+.Stretches {
+
+    & .nav-container {
+        margin: auto;
+    }
+
+    & .Wrapper {
+    
+        & .Wrapper h1 {
+            width: 70%;
+        }
+    
+        & .Wrapper p {
+            width: 35%;
+        }
+    }
+
+    & input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 18px;
+        margin-bottom: 10em;
+        padding: 0.5em 2em;
+        width: 20%;
+        height: 45px;
+        color: $purple-color;
+        border-radius: 43px;
+        border: none;
+        font-size: 0.9rem;
+        font-family: $primary-font;
+        box-shadow: $box-shadow;
+        transition: $transition-300;
+
+        &:focus {
+            outline: none;
+            transform: translateY(4px);
+        }
+
+        &:hover {
+            transform: translateY(4px);
+        }
+    }
+
+    & .stretches-container {
+        
+        & .hautducorps, .dos, .jambes {
+            margin-top: 3em;
+            margin-bottom: 3em;
+            
+            & h2 {
+                margin-bottom: 1em;
+            }
+            
+            & ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 0;
+                width: 100%;
+            }
+
+            & .card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0.5em 1em;
+                width: 350px;
+                height: 190px;
+                color: white;
+                text-decoration: none;
+                border-radius: 20.7538px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+                background-color: $hautducorps;
+                transition: $transition-200;
+
+                & div {
+                    margin: 0;
+                    padding: 0;
+                    width: 250px;
+                }
+        
+                &:hover {
+                    transform: translateY(-4px);
+                }
+        
+                & img {
+                    pointer-events:none;
+                    position: relative;
+                    bottom: 28px;
+                    left: 43px;
+                    width: 260px;
+                    height: 260px;
+                }
+            }
+
+            & .see-more {
+                cursor: pointer;
+                position: relative;
+                top: 0;
+                right: 25px;
+                padding: 8px;
+                width: 30px;
+                height: 30px;
+                color: white;
+                font-size: 3rem;
+                border-radius: 50%;
+                filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+                background-color: $purple-color;
+                transition: $transition-200;
+
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+    }
+}
