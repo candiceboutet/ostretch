@@ -2,7 +2,7 @@ import React from 'react';
 import HumanBody from '../../components/HumanBody/HumanBody';
 
 // Components
-import Wrapper from '../../components/Wrapper/Wrapper';
+import Wrapper from '../../components/Wrapper';
 
 // Styles
 import './home.scss';
