@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../../components/Navbar';
 import Wrapper from '../../components/Wrapper';
 import { BsArrowRightShort } from "react-icons/bs";
 
@@ -10,7 +9,6 @@ import Illustration from '../../assets/img/illustration1.svg';
 const Stretches = () => {
     return (
         <div className='Stretches'>
-            <Navbar />
             <div>
                 <Wrapper
                     wrapperTitle="Tous nos étirements disponibles"

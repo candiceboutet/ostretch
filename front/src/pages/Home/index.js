@@ -13,7 +13,6 @@ const Home = () => {
         <>
             <header>
                 <div className='Home'>
-                    <Navbar />
                     <Wrapper
                         wrapperTitle="Une nouvelle approche des étirements"
                         wrapperDescription="Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus."
