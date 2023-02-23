@@ -4,12 +4,14 @@ import Home from './pages/Home';
 import Stretches from './pages/Stretches';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Navbar from './components/Navbar';
 
 
 
 const App = () => {
   return (
     <div className='App'>
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/stretches' element={<Stretches />} />

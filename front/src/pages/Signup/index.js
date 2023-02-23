@@ -1,5 +1,3 @@
-
-import Navbar from "../../components/Navbar";
 import './styles.scss';
 import logo from '../../assets/img/logo.svg';
 import { useState } from "react";
@@ -27,7 +25,6 @@ const handleSubmit = (e) =>{
 
     return (
 <div className="login">
-        <Navbar />
         <div className="box-container">
             <img src={logo}></img>
             <h2>Créer un compte</h2>

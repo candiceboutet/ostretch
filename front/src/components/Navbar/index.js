@@ -5,7 +5,7 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import './styles.scss';
 
 const Navbar = () => {
-    const [isLogged, setIsLogged] = useState(false)
+    const [isLogged, setIsLogged] = useState(true)
     return (
         <div className="nav-container">
             <img src={logo} alt="OStretch logo" />
@@ -19,7 +19,7 @@ const Navbar = () => {
             </ul>
             <div className='login-profile'>
             {
-                isLogged ? <NavLink to="/my-space" className="space">Mon espace <FaRegUserCircle className='user' /></NavLink> : <NavLink to="/login" className="login">Login</NavLink>
+                isLogged ?  <FaRegUserCircle className='user' /> : <NavLink to="/login" className="login">Login</NavLink>
             }
             </div>
         

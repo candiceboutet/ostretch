@@ -1,5 +1,4 @@
 
-import Navbar from "../../components/Navbar";
 import './styles.scss';
 import logo from '../../assets/img/logo.svg';
 import { NavLink } from 'react-router-dom';
@@ -26,7 +25,6 @@ const handleSubmit = (e) =>{
 
     return (
 <div className="login">
-        <Navbar />
         <div className="box-container">
             <img src={logo}></img>
             <h2>Se connecter</h2>
