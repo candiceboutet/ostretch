@@ -1,64 +1,98 @@
-import React from 'react';
 import axios from 'axios';
-import Wrapper from '../../components/Wrapper';
-import { BsArrowRightShort } from "react-icons/bs";
+import { Component, useState } from 'react';
 
-// Styles
-import './styles.scss'
+// Components
+import Wrapper from '../../components/Wrapper';
 import Card from '../../components/Card';
 
-const Stretches = () => {
+// Styles
+import './styles.scss';
 
-    const [stretches, setStretches] = React.useState([]);
+export default class Stretches extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            stretches: [],
+            searchTerm: ''
+        }
+    }
 
-    axios.get(`http://localhost:3001/stretches`)
-        .then(response => {
-            
+    // Permet de récupérer les données de la BDD
+    componentDidMount() {
+        axios.get('http://localhost:3001/stretches')
+            .then(response => {
+                let stretches = response.data;
+                this.setState({ stretches })
+            })
+    }
+ 
+    // Permet de récupérer la valeur de la recherche
+    handleSearch = (event) => {
+        this.setState({ searchTerm: event.target.value })
+    }
+
+    // Permet de filter la data en fonction de la recherche
+    filterData = () => {
+        const { searchTerm } = this.state
+        return this.state.stretches.filter((rawdata) => {
+            return rawdata.title.toLowerCase().includes(searchTerm.toLowerCase())
         })
+    }
 
-    return (
-        <div className='Stretches'>
-            <div>
-                <Wrapper
-                    wrapperTitle="Tous nos étirements disponibles"
-                    wrapperDescription="Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus."
-                />
-                <input
-                    type="search"
-                    name="search"
-                    id="searchInput"
-                    placeholder='Votre recherche...'
-                />
-            </div>
-
-            <main>
-                <div className='stretches-container'>
-                    <div className="hautducorps">
-                        <h2>Haut du corps</h2>
-                        <ul>
-                            {
-                                stretches.map((stretch) => (
-                                    <Card
-                                        title={stretch.title}
-                                        description={stretch.description}
-                                        img={stretch.main_image}
-                                        alt={stretch.title}
-                                        hover={stretch.title}
-                                        key={stretch.id}
-                                    />
-                                ))
-                            }
-
-                            <BsArrowRightShort
-                                className='see-more'
-                                title='Voir plus'
-                            />
-                        </ul>
-                    </div>
+    render() {
+        const filterData = this.filterData()
+        return (
+            <div className='Stretches'>
+                <div>
+                    <Wrapper
+                        wrapperTitle="Tous nos étirements disponibles"
+                        wrapperDescription="Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus."
+                    />
+                    <input
+                        type="search"
+                        name="search"
+                        id="searchInput"
+                        placeholder='Votre recherche...'
+                        value={this.state.searchTerm}
+                        onChange={this.handleSearch}
+                    />
                 </div>
-            </main>
-        </div>
-    );
-};
 
-export default Stretches;
+                <main>
+                    <div className='stretches-container'>
+                        <div className="hautducorps">
+                            <h2>Haut du corps</h2>
+                            <ul>
+                                {
+                                    filterData.map((stretch) => (
+                                        <Card
+                                            title={stretch.title}
+                                            description={stretch.description}
+                                            img={stretch.main_image}
+                                            alt={stretch.title}
+                                            hover={stretch.title}
+                                            key={stretch.id}
+                                        />
+                                    ))
+                                }
+
+                                {/* {
+                                    this.state.stretches.map((stretch) => (
+                                        <Card
+                                            title={stretch.title}
+                                            description={stretch.description}
+                                            img={stretch.main_image}
+                                            alt={stretch.title}
+                                            hover={stretch.title}
+                                            key={stretch.id}
+                                        />
+                                    ))
+                                } */}
+                            </ul>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        )
+    }
+}

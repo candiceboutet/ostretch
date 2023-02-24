@@ -47,7 +47,7 @@
 
     & .stretches-container {
         
-        & .hautducorps, .dos, .jambes {
+        & .hautducorps {
             margin-top: 3em;
             margin-bottom: 3em;
             
@@ -62,6 +62,10 @@
                 flex-wrap: wrap;
                 padding: 0;
                 width: 100%;
+
+                & .card {
+                    margin: 1em;
+                }
             }
 
             & .see-more {
