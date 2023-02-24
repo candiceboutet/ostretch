@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 // Styles
 import './styles.scss'
@@ -8,7 +9,7 @@ const Card = (props) => {
 
     return (
         <div className="Card">
-            <a href={`/stretches/${props.link}`} className="card">
+            <Link to={`/stretches/${props.link}`} className="card">
                 <div>
                     <img
                         src={props.img}
@@ -20,7 +21,7 @@ const Card = (props) => {
                         <p>{props.description}</p>
                     </div>
                 </div>
-            </a>
+            </Link>
 
         </div>
 

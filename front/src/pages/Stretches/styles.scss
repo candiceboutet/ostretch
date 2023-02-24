@@ -56,16 +56,9 @@
             }
             
             & ul {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-                padding: 0;
-                width: 100%;
-
-                & .card {
-                    margin: 1em;
-                }
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 2em;
             }
 
             & .see-more {

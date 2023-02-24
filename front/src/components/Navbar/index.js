@@ -1,5 +1,5 @@
 import logo from '../../assets/img/logo.svg';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { FaRegUserCircle } from 'react-icons/fa';
 import './styles.scss';
@@ -10,16 +10,16 @@ const Navbar = () => {
         <div className="nav-container">
             <img src={logo} alt="OStretch logo" />
             <ul className="nav-links">
-            <NavLink className="home" to="/">
+            <Link className="home" to="/">
                 Accueil 
-            </NavLink>
-            <NavLink className="stretches" to="/stretches">
+            </Link>
+            <Link className="stretches" to="/stretches">
                 Étirements
-            </NavLink>
+            </Link>
             </ul>
             <div className='login-profile'>
             {
-                isLogged ?  <FaRegUserCircle className='user' /> : <NavLink to="/login" className="login">Login</NavLink>
+                isLogged ?  <FaRegUserCircle className='user' /> : <Link to="/login" className="login">Login</Link>
             }
             </div>
         

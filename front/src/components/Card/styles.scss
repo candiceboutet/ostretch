@@ -12,10 +12,10 @@
     border-radius: 20.7538px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     background-color: $hautducorps;
-    transition: $transition-200;
+    transition: all 0.3s ease 0s;
 
     &:hover {
-        transform: translateY(4px);
+        transform: translateY(-7px);
     }
 }
 

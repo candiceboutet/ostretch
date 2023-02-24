@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Component, useState } from 'react';
+import { Component } from 'react';
 
 // Components
 import Wrapper from '../../components/Wrapper';
@@ -72,6 +72,7 @@ export default class Stretches extends Component {
                                             alt={stretch.title}
                                             hover={stretch.title}
                                             key={stretch.id}
+                                            link={stretch.id}
                                         />
                                     ))
                                 }
