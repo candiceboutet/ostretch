@@ -3,9 +3,18 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { FaRegUserCircle } from 'react-icons/fa';
 import './styles.scss';
+import Toggle from '../Toggle';
 
 const Navbar = () => {
     const [isLogged, setIsLogged] = useState(true)
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    console.log(dropdownOpen);
+
+    const handleClick = () => {
+       setDropdownOpen(!dropdownOpen);
+      };
+
     return (
         <div className="nav-container">
             <img src={logo} alt="OStretch logo" />
@@ -19,10 +28,12 @@ const Navbar = () => {
             </ul>
             <div className='login-profile'>
             {
-                isLogged ?  <FaRegUserCircle className='user' /> : <NavLink to="/login" className="login">Login</NavLink>
+                isLogged ?  <FaRegUserCircle className='user' onClick={handleClick} /> : <NavLink to="/login" className="login">Login</NavLink>
             }
             </div>
-        
+            {
+            dropdownOpen ? <Toggle /> : null
+            }
         </div>
     )
 }

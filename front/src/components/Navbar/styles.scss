@@ -1,19 +1,19 @@
-@import '../../styles/vars';
 
-.nav-container {
-  margin: auto;
-  width: 90%;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 20px;
-  background-color: #EAE2F7;
-  padding-left: 40px;
-  padding-right: 40px;
-  box-shadow: $box-shadow;
-
-  & img {
+.nav-container{
+    width: 80%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+	align-items: center;
+    border-radius: 20px;
+    background-color: #EAE2F7;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    position: relative;
+}
+img{
     height: 75%;
   
     &:hover {
@@ -62,11 +62,26 @@
   color: black;
   outline: none;
   text-decoration: none;
-  padding-left: 10px;
+
 }
 
-.user {
-  transform: translateY(15%);
-  margin-left: 15px;
-  padding-right: 5px;
+.user{
+    transform: translateY(15%);
+    width: 40px;
+    cursor: pointer;
+
+}
+.menu{
+        position: absolute;
+        right: -6px;
+        top: 58px;
+        border: 1px solid grey;
+        width: 150px;  
+        box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        background-color: white;
+        border:none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
 }
