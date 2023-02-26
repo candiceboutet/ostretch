@@ -3,25 +3,46 @@ import './styles.scss';
 import logo from '../../assets/img/logo.svg';
 import { NavLink } from 'react-router-dom';
 import { useState } from "react";
+import axios from 'axios';
+
 
 const Login = () => {
+const [email, setEmail] = useState('');
+const [password, setPassword]= useState('');
+const [token, setToken]= useState('')
 
-const [userValue, setUserValue] = useState({
-    email: "",
-    password: "",
-})
-
-const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUserValue({
-        ...userValue,
-        [name]: value
-    })
+const handleEmailChange = (event) => {
+    setEmail(event.target.value)
 }
-const handleSubmit = (e) =>{
+const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+const handleSubmit = async (e) =>{
     e.preventDefault();
-    console.log(userValue);
+    try {
+        console.log(email)
+        const response = await axios.post('http://localhost:3000/login', {         
+        email: email,
+        password: password });
+  
+        // Stocke le token dans le stockage local du navigateur
+        localStorage.setItem('token', response.data.token);
+  
+        // Effectue une requête Axios authentifiée ultérieure en incluant le token dans le header Authorization
+        const authenticatedRequest = await axios.get('http://localhost:3000/login', {
+          headers: { 'Authorization': 'Bearer ' + response.data.token }
+        });
+
+
+        
+        // Traite la réponse de la requête authentifiée
+        console.log(authenticatedRequest.data);
+      } catch (error) {
+        console.error(error);
+      }
 }
+
 
     return (
 <div className="login">
@@ -31,11 +52,11 @@ const handleSubmit = (e) =>{
 
             <form className="form" onSubmit={handleSubmit}>
                 <div className="input-group">
-            <input type="email" name="email" placeholder="Email"value={userValue.email} onChange={handleChange}/>
+            <input type="email" name="email" placeholder="Email"value={email} onChange={handleEmailChange}/>
             </div>
 
           <div className="input-group">
-            <input type="password" name="password" placeholder="Mot de passe" value={userValue.password} onChange={handleChange}/>
+            <input type="password" name="password" placeholder="Mot de passe" value={password} onChange={handlePasswordChange}/>
           </div>
           <button className="primary">Connexion</button>
           <p>Pas encore inscrit ?</p>

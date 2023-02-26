@@ -1,26 +1,34 @@
 import './styles.scss';
 import logo from '../../assets/img/logo.svg';
 import { useState } from "react";
+import axios from 'axios';
 
 const Signup = () => {
 
-const [visitorValue, setVisitorValue] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirm: ""
+const [username, setUsername] = useState('');
+const [email, setEmail] = useState('');
+cosnt [password, setPassword] = useState('');
+
+const handleUsernameChange = (e) => {
+    setUsername(e.target.value)
 }
-)
-const handleChange = (e) => {
-    const { name, value } = e.target;
-    setVisitorValue({
-        ...visitorValue,
-        [name]: value
-    })
+
+const handleEmailChange = (e) => {
+    setEmail(e.target.value)
 }
-const handleSubmit = (e) =>{
+
+const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+const handleSubmit = async (e) =>{
     e.preventDefault();
-    console.log(visitorValue);
+    try {
+        const response = await axios.post('http://localhost:3000/user', { username, email, password });
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
 }
 
     return (
@@ -31,18 +39,18 @@ const handleSubmit = (e) =>{
 
             <form className="form" onSubmit={handleSubmit}>
                 <div className="input-group">
-                    <input type="text" name="name" placeholder="Name" value={visitorValue.name} onChange={handleChange}/>
+                    <input type="text" name="name" placeholder="Name" value={username} onChange={handleUsernameChange}/>
                 </div>
                 <div className="input-group">
-                    <input type="email" name="email" placeholder="Adresse mail" value={visitorValue.email} onChange={handleChange}/>
+                    <input type="email" name="email" placeholder="Adresse mail" value={email} onChange={handleEmailChange}/>
                 </div>
 
                 <div className="input-group">
-                    <input type="password" name="password" placeholder="Mot de passe" value={visitorValue.password} onChange={handleChange}/>
+                    <input type="password" name="password" placeholder="Mot de passe" value={password} onChange={handlePasswordChange}/>
                 </div>
-                <div className="input-group">
-                    <input type="password" name="confirm" placeholder="Confirmez le mot de passe" value={visitorValue.confirm} onChange={handleChange}/>
-                </div>
+                {/* <div className="input-group">
+                    <input type="password" name="confirm" placeholder="Confirmez le mot de passe" value={confirm} onChange={handleChange}/>
+                </div> */}
                 <button className="primary">S'inscrire</button>
             </form>
         
