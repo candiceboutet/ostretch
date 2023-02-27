@@ -9,14 +9,15 @@ const Card = (props) => {
 
     return (
         <div className="Card">
-            <Link to={`/stretches/${props.link}`} className="card">
-                <div>
+            {/* <Link to={`/stretches/${props.link}`} className="card"> */}
+            <Link to={"/stretches/stretch"} className="card">
+                <div className='card-content'>
                     <img
                         src={props.img}
                         alt={props.alt}
                         title={props.hover}
                     />
-                    <div className="card-details">
+                    <div className="card-footer">
                         <h3>{props.title}</h3>
                         <p>{props.description}</p>
                     </div>
@@ -24,22 +25,6 @@ const Card = (props) => {
             </Link>
 
         </div>
-
-        // <div key={props.key} className='Card'>
-        //     <a href="/stretch" className="card">
-        //         <div>
-        //             <h3>{props.title}</h3>
-        //             <p>
-        //                 {props.description}
-        //             </p>
-        //         </div>
-        //         <img
-        //             src={props.img}
-        //             alt={props.alt}
-        //             hover={props.hover}
-        //         />
-        //     </a>
-        // </div>
     );
 };
 
