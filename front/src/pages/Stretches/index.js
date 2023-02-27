@@ -17,7 +17,6 @@ export default class Stretches extends Component {
         }
     }
 
-    // Permet de récupérer les données de la BDD
     componentDidMount() {
         axios.get('http://localhost:3001/stretches')
             .then(response => {
@@ -26,12 +25,10 @@ export default class Stretches extends Component {
             })
     }
  
-    // Permet de récupérer la valeur de la recherche
     handleSearch = (event) => {
         this.setState({ searchTerm: event.target.value })
     }
 
-    // Permet de filter la data en fonction de la recherche
     filterData = () => {
         const { searchTerm } = this.state
         return this.state.stretches.filter((rawdata) => {
@@ -75,19 +72,6 @@ export default class Stretches extends Component {
                                         />
                                     ))
                                 }
-
-                                {/* {
-                                    this.state.stretches.map((stretch) => (
-                                        <Card
-                                            title={stretch.title}
-                                            description={stretch.description}
-                                            img={stretch.main_image}
-                                            alt={stretch.title}
-                                            hover={stretch.title}
-                                            key={stretch.id}
-                                        />
-                                    ))
-                                } */}
                             </ul>
                         </div>
                     </div>
