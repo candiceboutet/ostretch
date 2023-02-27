@@ -5,8 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-
-    // const navigate = useNavigate();
+const navigate = useNavigate();
 
 const [username, setUsername] = useState('');
 const [email, setEmail] = useState('');
@@ -39,6 +38,7 @@ const handleSubmit = async (e) =>{
         password,
         passwordConfirm});
         console.log(response.data);
+        navigate('/login');
       } catch (error) {
         console.error(error);
       }
