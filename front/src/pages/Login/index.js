@@ -1,15 +1,17 @@
 
 import './styles.scss';
 import logo from '../../assets/img/logo.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import axios from 'axios';
 
 
-const Login = () => {
+const Login = ({onSubmitLoginForm}) => {
+const navigate = useNavigate();
+
 const [email, setEmail] = useState('');
 const [password, setPassword]= useState('');
-const [token, setToken]= useState('')
+
 
 const handleEmailChange = (event) => {
     setEmail(event.target.value)
@@ -30,14 +32,15 @@ const handleSubmit = async (e) =>{
         localStorage.setItem('token', response.data.token);
   
         // Effectue une requête Axios authentifiée ultérieure en incluant le token dans le header Authorization
-        const authenticatedRequest = await axios.get('http://localhost:3000/login', {
+        const authenticatedRequest = await axios.get('http://localhost:3000/user/me', {
           headers: { 'Authorization': 'Bearer ' + response.data.token }
         });
-
-
+      
+        const userFound = authenticatedRequest.data.userFound;
+        onSubmitLoginForm(userFound);
+        navigate("/");
         
         // Traite la réponse de la requête authentifiée
-        console.log(authenticatedRequest.data);
       } catch (error) {
         console.error(error);
       }

@@ -5,15 +5,17 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import './styles.scss';
 import Toggle from '../Toggle';
 
-const Navbar = () => {
-    const [isLogged, setIsLogged] = useState(true)
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+const Navbar = ({isLogged, onLogout}) => {
 
-    console.log(dropdownOpen);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    console.log(isLogged)
 
     const handleClick = () => {
        setDropdownOpen(!dropdownOpen);
       };
+      const handleClose = () => {
+        setDropdownOpen(false)
+      }
 
     return (
         <div className="nav-container">
@@ -32,7 +34,7 @@ const Navbar = () => {
             }
             </div>
             {
-            dropdownOpen ? <Toggle /> : null
+            dropdownOpen ? <Toggle onLogout={onLogout} onClose={handleClose} /> : null
             }
         </div>
     )
