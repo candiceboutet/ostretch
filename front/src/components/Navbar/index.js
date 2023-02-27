@@ -6,7 +6,7 @@ import './styles.scss';
 import Toggle from '../Toggle';
 
 const Navbar = () => {
-    const [isLogged, setIsLogged] = useState(true)
+    const [isLogged, setIsLogged] = useState(false)
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     console.log(dropdownOpen);

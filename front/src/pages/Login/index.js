@@ -30,9 +30,10 @@ const handleSubmit = async (e) =>{
         localStorage.setItem('token', response.data.token);
   
         // Effectue une requête Axios authentifiée ultérieure en incluant le token dans le header Authorization
-        const authenticatedRequest = await axios.get('http://localhost:3000/login', {
+        const authenticatedRequest = await axios.get('http://localhost:3000/user/me', {
           headers: { 'Authorization': 'Bearer ' + response.data.token }
         });
+      
 
 
         
