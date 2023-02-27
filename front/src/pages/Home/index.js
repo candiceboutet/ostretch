@@ -1,9 +1,9 @@
 import React from 'react';
-import HumanBody from '../../components/HumanBody/HumanBody';
-import Navbar from '../../components/Navbar';
+import { Link } from 'react-router-dom'
 
 // Components
 import Wrapper from '../../components/Wrapper';
+import HumanBody from '../../components/HumanBody/HumanBody';
 
 // Styles
 import './home.scss';
@@ -17,9 +17,9 @@ const Home = () => {
                         wrapperTitle="Une nouvelle approche des étirements"
                         wrapperDescription="Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus."
                     />
-                    <a className='discover-button' href="/">
+                    <Link className='discover-button' to="/stretches">
                         Découvrir
-                    </a>
+                    </Link>
                 </div>
             </header>
 

@@ -47,7 +47,7 @@
 
     & .stretches-container {
         
-        & .hautducorps, .dos, .jambes {
+        & .hautducorps {
             margin-top: 3em;
             margin-bottom: 3em;
             
@@ -56,46 +56,9 @@
             }
             
             & ul {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-                padding: 0;
-                width: 100%;
-            }
-
-            & .card {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0.5em 1em;
-                width: 350px;
-                height: 190px;
-                color: white;
-                text-decoration: none;
-                border-radius: 20.7538px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-                background-color: $hautducorps;
-                transition: $transition-200;
-
-                & div {
-                    margin: 0;
-                    padding: 0;
-                    width: 250px;
-                }
-        
-                &:hover {
-                    transform: translateY(-4px);
-                }
-        
-                & img {
-                    pointer-events:none;
-                    position: relative;
-                    bottom: 28px;
-                    left: 43px;
-                    width: 260px;
-                    height: 260px;
-                }
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 2em;
             }
 
             & .see-more {
