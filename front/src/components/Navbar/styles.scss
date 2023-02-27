@@ -1,3 +1,4 @@
+
 .nav-container{
     width: 80%;
     height: 80px;
@@ -14,35 +15,56 @@
 }
 img{
     height: 75%;
+  
+    &:hover {
+      animation: spin 2s linear infinite;
+    }
+  }
 }
-.home{
-    margin-right: 20px;
-    color: black;
-    outline: none;
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.home {
+  margin-right: 20px;
+  color: black;
+  outline: none;
   text-decoration: none;
 }
-.stretches{
-    padding-left: 20px;
-    color: black;
-    outline: none;
+
+.stretches {
+  padding-left: 20px;
+  color: black;
+  outline: none;
   text-decoration: none;
 }
-.login-profile{
-    padding: 5px;
-    background-color: white;
-    border-radius: 10px;
+
+.login-profile {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
 }
-.login{
-    color: black;
-    outline: none;
-    text-decoration: none; 
+
+.login {
+  color: black;
+  outline: none;
+  text-decoration: none;
 }
+
 .space {
-    color: black;
-    outline: none;
+  color: black;
+  outline: none;
   text-decoration: none;
 
 }
+
 .user{
     transform: translateY(15%);
     width: 40px;

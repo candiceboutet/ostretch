@@ -1,5 +1,6 @@
 import React from 'react';
 import HumanBody from '../../components/HumanBody/HumanBody';
+import Navbar from '../../components/Navbar';
 
 // Components
 import Wrapper from '../../components/Wrapper';
