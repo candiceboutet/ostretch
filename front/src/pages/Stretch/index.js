@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../../components/Navbar';
 
 // Styles
 import './styles.scss';
@@ -8,7 +7,6 @@ import Illustration from '../../assets/img/illustration1.svg';
 const Stretch = () => {
     return (
         <div className='Stretch'>
-            <Navbar />
             <div className="stretch-container">
                 <div className="stretch-ilustration-container">
                     <img

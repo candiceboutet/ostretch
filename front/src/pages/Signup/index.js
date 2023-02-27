@@ -48,7 +48,7 @@ const handleSubmit = async (e) =>{
     return (
 <div className="login">
         <div className="box-container">
-            <img src={logo}></img>
+            <img src={logo} alt="" />
             <h2>Créer un compte</h2>
 
             <form className="form" onSubmit={handleSubmit}>

@@ -1,233 +1,82 @@
-import React from 'react';
+import axios from 'axios';
+import { Component } from 'react';
+
+// Components
 import Wrapper from '../../components/Wrapper';
-import { BsArrowRightShort } from "react-icons/bs";
+import Card from '../../components/Card';
 
 // Styles
-import './styles.scss'
-import Illustration from '../../assets/img/illustration1.svg';
+import './styles.scss';
 
-const Stretches = () => {
-    return (
-        <div className='Stretches'>
-            <div>
-                <Wrapper
-                    wrapperTitle="Tous nos étirements disponibles"
-                    wrapperDescription="Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus."
-                />
-                <input 
-                    type="search" 
-                    name="search" 
-                    id="searchInput" 
-                    placeholder='Votre recherche...'
-                />
-            </div>
+export default class Stretches extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            stretches: [],
+            searchTerm: ''
+        }
+    }
 
-            <main>
-                <div className='stretches-container'>
-                    <div className="hautducorps">
-                        <h2>Haut du corps</h2>
-                        <ul>
+    componentDidMount() {
+        axios.get('http://localhost:3001/stretches')
+            .then(response => {
+                let stretches = response.data;
+                this.setState({ stretches })
+            })
+    }
+ 
+    handleSearch = (event) => {
+        this.setState({ searchTerm: event.target.value })
+    }
 
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
+    filterData = () => {
+        const { searchTerm } = this.state
+        return this.state.stretches.filter((rawdata) => {
+            return rawdata.title.toLowerCase().includes(searchTerm.toLowerCase())
+        })
+    }
 
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <BsArrowRightShort 
-                                className='see-more' 
-                                title='Voir plus'
-                            />
-                        </ul>
-                    </div>
-
-                    <div className="dos">
-                        <h2>Dos</h2>
-                        <ul>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <BsArrowRightShort 
-                                className='see-more' 
-                                title='Voir plus'
-                            />
-                        </ul>
-                    </div>
-
-                    <div className="jambes">
-                        <h2>Jambes</h2>
-                        <ul>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <a href="/stretch" className="card">
-                                <div>
-                                    <h3>Nom de l'étirement</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet
-                                    </p>
-                                </div>
-                                <img 
-                                    src={ Illustration } 
-                                    alt="Nom de l'étirement"
-                                    title="Nom de l'étirement"
-                                />
-                            </a>
-
-                            <BsArrowRightShort 
-                                className='see-more' 
-                                title='Voir plus'
-                            />
-                        </ul>
-                    </div>
+    render() {
+        const filterData = this.filterData()
+        return (
+            <div className='Stretches'>
+                <div>
+                    <Wrapper
+                        wrapperTitle="Tous nos étirements disponibles"
+                        wrapperDescription="Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus."
+                    />
+                    <input
+                        type="search"
+                        name="search"
+                        id="searchInput"
+                        placeholder='Votre recherche...'
+                        value={this.state.searchTerm}
+                        onChange={this.handleSearch}
+                    />
                 </div>
-            </main>
-        </div>
-    );
-};
 
-export default Stretches;
+                <main>
+                    <div className='stretches-container'>
+                        <div className="hautducorps">
+                            <ul>
+                                {
+                                    filterData.map((stretch) => (
+                                        <Card
+                                            title={stretch.title}
+                                            description={stretch.description}
+                                            img={stretch.main_image}
+                                            alt={stretch.title}
+                                            hover={stretch.title}
+                                            key={stretch.id}
+                                            link={stretch.id}
+                                        />
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        )
+    }
+}
