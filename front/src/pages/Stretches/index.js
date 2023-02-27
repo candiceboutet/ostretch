@@ -61,7 +61,6 @@ export default class Stretches extends Component {
                 <main>
                     <div className='stretches-container'>
                         <div className="hautducorps">
-                            <h2>Haut du corps</h2>
                             <ul>
                                 {
                                     filterData.map((stretch) => (
