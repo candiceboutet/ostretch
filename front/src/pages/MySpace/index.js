@@ -3,12 +3,17 @@ import React from 'react';
 // Styles
 import './styles.scss'
 
-const MySpace = () => {
+
+const MySpace = ({user}) => {
     return (
         <div className='MySpace'>
 
             <div className="my-infos">
                 <h2>Mes informations</h2>
+                    <p>Bienvenue {user.username}</p>
+
+
+
                 <div className="inputs-left">
                     <input type="text"
                         id='firstname'
