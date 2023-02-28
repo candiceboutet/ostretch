@@ -35,7 +35,7 @@ const App = () => {
         <Route path='/stretches/stretch' element={<Stretch />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
-        <Route path='/my-space' element={<MySpace />} />
+        <Route path='/my-space' element={<MySpace user={user} />} />
         <Route path='/*' element={<Error404 />} />
       </Routes>
     </div>
