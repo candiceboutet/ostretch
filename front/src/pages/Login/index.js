@@ -25,7 +25,6 @@ const handlePasswordChange = (event) => {
 const handleSubmit = async (e) =>{
     e.preventDefault();
     try {
-        console.log(email)
         const response = await axios.post('http://localhost:3000/login', {         
         email: email,
         password: password });
