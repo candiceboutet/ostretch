@@ -14,14 +14,17 @@ import MySpace from './pages/MySpace';
 const App = () => {
   const [user, setUser]= useState('')
   const [isLogged, setIsLogged] = useState(false)
+  console.log(user);
 
   const handleLogin = (item) => {
     setUser(item);
     setIsLogged(true)
   }
   
-  const handleLogout = () => {
+const handleLogout = () => {
  setIsLogged(false);
+ setUser('');
+ localStorage.clear();
   }
 
   return (
