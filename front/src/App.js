@@ -21,9 +21,9 @@ console.log(user)
   }
   
 const handleLogout = () => {
- setIsLogged(false);
- setUser('');
- localStorage.clear();
+  setIsLogged(false);
+  setUser('');
+  localStorage.clear();
 }
 
   return (
@@ -38,7 +38,7 @@ const handleLogout = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         {
-        user ? <Route path='/my-space' element={<MySpace />} /> : <Route path='/my-space' element={<Login />} />
+        user ? <Route path='/my-space' element={<MySpace user={user} />} /> : <Route path='/my-space' element={<Login />} />
         }
         <Route path='/*' element={<Error404 />} />
       </Routes>
