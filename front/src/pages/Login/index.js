@@ -1,15 +1,19 @@
 
 import './styles.scss';
 import logo from '../../assets/img/logo.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import axios from 'axios';
 
 
-const Login = () => {
+const Login = ({onSubmitLoginForm}) => {
+const navigate = useNavigate();
+
 const [email, setEmail] = useState('');
 const [password, setPassword]= useState('');
-const [token, setToken]= useState('')
+// const [token, setToken] = useState('')
+const [error, setError] = useState(null);
+
 
 const handleEmailChange = (event) => {
     setEmail(event.target.value)
@@ -21,8 +25,8 @@ const handlePasswordChange = (event) => {
 const handleSubmit = async (e) =>{
     e.preventDefault();
     try {
-        console.log(email)
-        const response = await axios.post('http://localhost:3000/login', {         
+
+        const response = await axios.post('http://localhost:3001/login', {         
         email: email,
         password: password });
   
@@ -30,16 +34,18 @@ const handleSubmit = async (e) =>{
         localStorage.setItem('token', response.data.token);
   
         // Effectue une requête Axios authentifiée ultérieure en incluant le token dans le header Authorization
-        const authenticatedRequest = await axios.get('http://localhost:3000/login', {
+        const authenticatedRequest = await axios.get('http://localhost:3001/user/me', {
           headers: { 'Authorization': 'Bearer ' + response.data.token }
         });
-
-
+      
+        const userFound = authenticatedRequest.data.userFound;
+        onSubmitLoginForm(userFound);
+        navigate("/");
         
         // Traite la réponse de la requête authentifiée
-        console.log(authenticatedRequest.data);
       } catch (error) {
         console.error(error);
+        setError(true);
       }
 }
 
@@ -49,7 +55,9 @@ const handleSubmit = async (e) =>{
         <div className="box-container">
             <img src={logo}></img>
             <h2>Se connecter</h2>
-
+            {
+            error ? <div className='error'> Mauvaise adresse email et/ou mot de passe </div> : null
+            }
             <form className="form" onSubmit={handleSubmit}>
                 <div className="input-group">
             <input type="email" name="email" placeholder="Email"value={email} onChange={handleEmailChange}/>
