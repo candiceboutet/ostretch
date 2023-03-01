@@ -8,7 +8,6 @@ const InfoForm = ({user}) => {
     const handleUsernameChange = (e) => {
         setUsername(e.target.value)
     }
-    
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
     }
@@ -16,9 +15,14 @@ const InfoForm = ({user}) => {
         setBiography(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log({username, email, biography})
+    }
+
     return (
        
-    <form className="infos-container">
+    <form className="infos-container" onSubmit={handleSubmit}>
         <div className="infos-box">
         <div className='infos-left'>
         <label>

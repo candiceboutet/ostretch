@@ -20,33 +20,6 @@ const MySpace = ({user}) => {
                 
                 <h2>Mes informations</h2>
                 { isEditOpen ? <InfoForm user={user}/> : <Info user={user} handleEdit={onEdit} />}
-                
-                {/* <div className="inputs-left">
-                    <input type="text"
-                        id='username'
-                        placeholder={user.username}
-                    />
-
-                    <input type="text"
-                        id='lastname'
-                        placeholder='Votre nom...'
-                    />
-
-                    <input type="email"
-                        id='email'
-                        placeholder='Votre adresse email...'
-                    />
-                </div>
-                <div className="inputs-right">
-                    <textarea name="message"
-                        id=""
-                        cols="30"
-                        rows="10"
-                    />
-                </div>
-                <button>
-                    Modifier
-                </button> */}
      
             </div>
             <div className="box">
