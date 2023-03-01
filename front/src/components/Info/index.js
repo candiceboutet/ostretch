@@ -1,4 +1,4 @@
-const Info = ({user, handleEdit}) => {
+const Info = ({user, handleClick}) => {
     return (
  <div className="infos-container">
     <div className="infos-box">
@@ -8,7 +8,7 @@ const Info = ({user, handleEdit}) => {
         </div>
         <div className='infos'> Bio :  {user.biography}</div>
     </div> 
-    <button className="modify-btn" onClick={handleEdit}>Modifier</button>
+    <button className="modify-btn" onClick={handleClick}>Modifier</button>
     </div>
     )
 }

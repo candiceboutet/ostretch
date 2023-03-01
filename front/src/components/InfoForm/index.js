@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, handleClick } from "react";
 
 const InfoForm = ({user}) => {
     const [username, setUsername] = useState('');
@@ -39,7 +39,7 @@ const InfoForm = ({user}) => {
         <input type="text" name="bio" value={biography} className='infos'  placeholder={user.biography} onChange={handleBioChange}/>
         </label>
         </div>
-        <button className="modify-btn" >Enregistrer</button>
+        <button className="modify-btn" onClick={handleClick}>Enregistrer</button>
     </form> 
     )
 }

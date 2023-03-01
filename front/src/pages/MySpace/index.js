@@ -10,7 +10,7 @@ const MySpace = ({user}) => {
     const [isEditOpen, setIsEditOpen] = useState(false);
 
     const onEdit = () => {
-        setIsEditOpen(true);
+        setIsEditOpen(!isEditOpen);
     }
 
     return (
@@ -19,14 +19,13 @@ const MySpace = ({user}) => {
             <div className="box">
                 
                 <h2>Mes informations</h2>
-                { isEditOpen ? <InfoForm user={user}/> : <Info user={user} handleEdit={onEdit} />}
+                { isEditOpen ? <InfoForm user={user} handleClick={onEdit}/> : <Info user={user} handleClick={onEdit} />}
      
             </div>
             <div className="box">
           
                 <h2>Mes favoris</h2>
-                <p className=''> Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus.Lorem ipsum dolor sit amet consectetur.</p>
-    
+                
             </div>
         </div>
     );
