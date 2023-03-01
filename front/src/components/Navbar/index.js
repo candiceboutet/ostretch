@@ -8,7 +8,6 @@ import Toggle from '../Toggle';
 const Navbar = ({isLogged, onLogout}) => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    console.log(isLogged)
 
     const handleClick = () => {
        setDropdownOpen(!dropdownOpen);

@@ -11,6 +11,8 @@ const navigate = useNavigate();
 
 const [email, setEmail] = useState('');
 const [password, setPassword]= useState('');
+// const [token, setToken] = useState('')
+const [error, setError] = useState(null);
 
 
 const handleEmailChange = (event) => {
@@ -23,7 +25,7 @@ const handlePasswordChange = (event) => {
 const handleSubmit = async (e) =>{
     e.preventDefault();
     try {
-        console.log(email)
+
         const response = await axios.post('http://localhost:3001/login', {         
         email: email,
         password: password });
@@ -43,6 +45,7 @@ const handleSubmit = async (e) =>{
         // Traite la réponse de la requête authentifiée
       } catch (error) {
         console.error(error);
+        setError(true);
       }
 }
 
@@ -52,7 +55,9 @@ const handleSubmit = async (e) =>{
         <div className="box-container">
             <img src={logo}></img>
             <h2>Se connecter</h2>
-
+            {
+            error ? <div className='error'> Mauvaise adresse email et/ou mot de passe </div> : null
+            }
             <form className="form" onSubmit={handleSubmit}>
                 <div className="input-group">
             <input type="email" name="email" placeholder="Email"value={email} onChange={handleEmailChange}/>
