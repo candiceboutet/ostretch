@@ -57,7 +57,7 @@ export default class Stretches extends Component {
 
                 <main>
                     <div className='stretches-container'>
-                        <div className="hautducorps">
+                        <div className='category'>
                             <ul>
                                 {
                                     filterData.map((stretch) => (
