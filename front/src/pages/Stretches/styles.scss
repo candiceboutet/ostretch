@@ -47,38 +47,33 @@
 
     & .stretches-container {
         
-        & .hautducorps {
-            margin-top: 3em;
-            margin-bottom: 3em;
-            
-            & h2 {
-                margin-bottom: 1em;
-            }
-            
-            & ul {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-gap: 2em;
-            }
+        & h2 {
+            margin-bottom: 1em;
+        }
+        
+        & ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 2em;
+        }
 
-            & .see-more {
-                cursor: pointer;
-                position: relative;
-                top: 0;
-                right: 25px;
-                padding: 8px;
-                width: 30px;
-                height: 30px;
-                color: white;
-                font-size: 3rem;
-                border-radius: 50%;
-                filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
-                background-color: $purple-color;
-                transition: $transition-200;
+        & .see-more {
+            cursor: pointer;
+            position: relative;
+            top: 0;
+            right: 25px;
+            padding: 8px;
+            width: 30px;
+            height: 30px;
+            color: white;
+            font-size: 3rem;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+            background-color: $purple-color;
+            transition: $transition-200;
 
-                &:hover{
-                    transform: scale(1.2);
-                }
+            &:hover{
+                transform: scale(1.2);
             }
         }
 
