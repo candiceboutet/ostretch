@@ -14,7 +14,6 @@ import MySpace from './pages/MySpace';
 const App = () => {
   const [user, setUser]= useState('')
   const [isLogged, setIsLogged] = useState(false)
-console.log(user)
   const handleLogin = (item) => {
     setUser(item);
     setIsLogged(true)
@@ -32,7 +31,7 @@ const handleLogout = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/stretches' element={<Stretches />} />
-        <Route path='/stretch' element={<Stretch />} />
+        <Route path='/stretches/:id' element={<Stretch />} />
         <Route path='/login' element={<Login onSubmitLoginForm={handleLogin} />} />
         <Route path='/stretches/stretch' element={<Stretch />} />
         <Route path='/login' element={<Login />} />
