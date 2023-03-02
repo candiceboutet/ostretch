@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from 'axios';
 
-const InfoForm = ({user, setUser, handleClick}) => {
+const InfoForm = ({user, setUser, setIsEditOpen}) => {
 
   const [userValue, setUserValue] = useState({
     username: "",
@@ -40,36 +40,44 @@ const InfoForm = ({user, setUser, handleClick}) => {
       }
     })
       .then(response => {
-        // Mettre à jour l'état avec les nouvelles données
-        // setUser({
-        //   username: response.data.username,
-        //   bigraphie: response.data.biographie
-        // });
-        console.log(user)
+        axios.get('http://localhost:3000/user/me', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          const userFound = response.data.userFound;
+          setUser(userFound);
+          console.log(user);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       })
       .catch(error => {
         console.error(error);
       });
+      setIsEditOpen(false);
     }
 
     return (
        
     <form className="infos-container" onSubmit={handleSubmit}>
-        <div className="infos-box">
-        <div className='infos-left'>
-        <label>
-          Pseudo:
+     <p>
+          Mon pseudo:
+      </p>
         <input type="text" name="username" value={userValue.username} className='infos' placeholder={user.username} onChange={handleChange}/> 
-        </label>
-        </div>
-        <label>
-          Bio:
-        <input type="text" name="biography" value={userValue.biography} className='infos'  placeholder={user.biography} onChange={handleChange}/>
-        </label>
-        </div>
+      
+        <p>
+          Ma bio:
+        </p>
+        <textarea rows="5" cols="33" type="text" name="biography" value={userValue.biography} className='infos'  placeholder={user.biography} onChange={handleChange}/>
+  
+
         <button className="modify-btn" >Enregistrer</button>
     </form> 
     )
 }
 
 export default InfoForm;
+

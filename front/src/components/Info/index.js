@@ -1,13 +1,10 @@
 const Info = ({user, handleClick}) => {
     return (
  <div className="infos-container">
-    <div className="infos-box">
-        <div className='infos-left'>
-            <div className='infos'> Pseudo : {user.username}</div>
-            <div className='infos'> Email : {user.email}</div>   
-        </div>
-        <div className='infos'> Bio :  {user.biography}</div>
-    </div> 
+    <p>Mon pseudo :</p>
+    <div className='infos'> {user.username}</div> 
+    <p>Ma bio :</p>
+    <div className='infos'> {user.biography}</div>
     <button className="modify-btn" onClick={handleClick}>Modifier</button>
     </div>
     )

@@ -5,7 +5,7 @@ import Info from '../../components/Info';
 import InfoForm from '../../components/InfoForm';
 import './styles.scss'
 
-const MySpace = ({user}) => {
+const MySpace = ({user, setUser}) => {
 
     const [isEditOpen, setIsEditOpen] = useState(false);
 
@@ -19,7 +19,7 @@ const MySpace = ({user}) => {
             <div className="box">
                 
                 <h2>Mes informations</h2>
-                { isEditOpen ? <InfoForm user={user} handleClick={onEdit}/> : <Info user={user} handleClick={onEdit} />}
+                { isEditOpen ? <InfoForm user={user} setIsEditOpen={setIsEditOpen} setUser={setUser} /> : <Info user={user} handleClick={onEdit} />}
      
             </div>
             <div className="box">
