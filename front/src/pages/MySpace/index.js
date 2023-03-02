@@ -23,12 +23,12 @@ const MySpace = ({user}) => {
      
             </div>
             <div className="box">
-          
                 <h2>Mes favoris</h2>
-                
             </div>
         </div>
     );
 };
 
 export default MySpace;
+
+// /user/me/stretches/:id
