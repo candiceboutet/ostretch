@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Contact() {
 
     const contactForm = document.getElementById('form__contact')

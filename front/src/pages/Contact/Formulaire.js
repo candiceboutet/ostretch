@@ -1,9 +1,14 @@
+// Styles
+import './formulaire.scss';
+
 const ContactForm = () => {
     const contactForm = document.getElementById('form__contact')
     let name = document.getElementById('name');
     let email = document.getElementById('email');
     let subject = document.getElementById('subject');
     let message = document.getElementById('message');
+
+    console.log(contactForm, name, email, subject, message)
 
     contactForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -15,7 +20,7 @@ const ContactForm = () => {
             message: message.value
         }
     
-        fetch('/contact', {
+        fetch('http://localhost:3001/contact', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -25,7 +30,7 @@ const ContactForm = () => {
           .then(response => response.text())
           .then(data => {
             if (data === 'success') {
-              alert("email send");
+              console.log("email send");
               name.value = "";
               email.value = "";
               subject.value = "";
