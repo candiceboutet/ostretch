@@ -16,7 +16,6 @@ export default function Stretch() {
             })
     }, [id])
 
-    console.log(stretch)
     return (
         <div className="Stretch">
             <div className="stretch-container">
