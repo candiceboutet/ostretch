@@ -46,6 +46,9 @@ const Navbar = ({ isLogged, onLogout }) => {
                     <Link className="stretches" to="/stretches">
                         Étirements
                     </Link>
+                    <Link className="contact" to="/contact">
+                        Contact
+                    </Link>
                 </ul>
                 <div className='login-profile'>
                     {
@@ -80,7 +83,7 @@ const Navbar = ({ isLogged, onLogout }) => {
                         </li>
                     </Link>
                     {
-                        isLogged ? <FaRegUserCircle className='user' /> : <NavLink to="/login" className="login">Login</NavLink>
+                        isLogged ? <NavLink to ="/my-space" className='user'>Mon espace</NavLink> : <NavLink to="/login" className="login">Login</NavLink>
                     }
                 </ul>
             </div>
