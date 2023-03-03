@@ -6,7 +6,6 @@ import './styles.scss'
 
 const Card = (props) => {
     
-
     return (
         <div className="Card">
             {/* <Link to={`/stretches/${props.link}`} className="card"> */}
