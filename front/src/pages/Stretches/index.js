@@ -62,6 +62,7 @@ export default class Stretches extends Component {
                                 {
                                     filterData.map((stretch) => (
                                         <Card
+                                            id={stretch.id}
                                             title={stretch.title}
                                             description={stretch.description}
                                             img={stretch.main_image}
