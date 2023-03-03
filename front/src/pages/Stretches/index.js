@@ -69,6 +69,7 @@ export default class Stretches extends Component {
                                             hover={stretch.title}
                                             key={stretch.id}
                                             link={stretch.id}
+                                            isLogged={this.props.isLogged}
                                         />
                                     ))
                                 }
