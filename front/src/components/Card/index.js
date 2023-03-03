@@ -9,7 +9,7 @@ import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 const Card = (props) => {
 
     const [isFavorite, setIsFavorite] = useState(false);
-    const token = localStorage.getItem('userToken');
+    const token = localStorage.getItem('token');
 
     const handleFavorite = (event) => {
         event.preventDefault();
@@ -18,13 +18,14 @@ const Card = (props) => {
         const config = {
             headers: { Authorization: `Bearer ${token}` }
           };
-          axios.post(`http://localhost:3001/user/me/stretches/${props.id}`, config)
+          console.log(config);
+          axios.post(`http://localhost:3001/user/me/stretches/${props.id}`,{}, config)
             .then(response => {
               setIsFavorite(true);
             })
             .catch(error => {
               console.log(error);
-            });
+            }, [token]);
     };
 
     console.log(props.isLogged)
