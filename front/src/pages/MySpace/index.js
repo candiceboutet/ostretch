@@ -25,8 +25,7 @@ const MySpace = ({user, setUser}) => {
             </div>
             <div className="box">
                 <h2>Mes favoris</h2>
-                <Bookmarks />
-            
+                <Bookmarks />          
             </div>
         </div>
     );
