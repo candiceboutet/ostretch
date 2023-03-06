@@ -1,7 +1,11 @@
 import { useState } from "react";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const InfoForm = ({user, setUser, setIsEditOpen}) => {
+
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token');
 
   const [userValue, setUserValue] = useState({
     username: "",
@@ -15,6 +19,7 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
           [name]: value
         })
     }
+    //
 
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -60,6 +65,21 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
       setIsEditOpen(false);
     }
 
+    const handleDelete = () => {
+      const config = {
+        headers: { Authorization: `Bearer ${token}` }
+      };
+      axios.delete(`http://localhost:3000/user/me`, config)
+      .then(response => {
+        setUser("");
+        localStorage.clear();
+        navigate("/signup");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    }
+
     return (
        
     <form className="infos-container" onSubmit={handleSubmit}>
@@ -75,6 +95,8 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
   
 
         <button className="modify-btn" >Enregistrer</button>
+      <p>Vous souhaitez supprimer définivement votre compte?</p>
+        <div className="delete-account-btn" onClick={handleDelete}>Suprimer</div>
     </form> 
     )
 }

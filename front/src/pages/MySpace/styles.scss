@@ -60,6 +60,16 @@
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);   
         padding: 15px;
         margin-top: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    .delete-account-btn {
+        border-radius: 20px;
+        color: white;
+        background-color: #ba788a;
+        border: none;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);   
+        padding: 15px;
         cursor: pointer;
     }
 .bookmarks-cards{
@@ -73,7 +83,11 @@
 }
 .delete-btn{
     position: absolute;
-    border-radius: 20px;
+    border-radius: 25px;
     top: 10px;
     left: 10px;
+    padding: 5px;
+    border: none;
+    color: white;
+    background-color: #9C5FFF;
 }

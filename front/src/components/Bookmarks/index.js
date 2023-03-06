@@ -51,7 +51,7 @@ const Bookmarks = () => {
             key={stretch.id}
             link={stretch.id}
             />
-            <button className='delete-btn' onClick={()=>handleDelete(stretch.id)}>X</button>
+            <button className='delete-btn' onClick={()=>handleDelete(stretch.id)}>Supprimer</button>
             </div>
          ))
         }
