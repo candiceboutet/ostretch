@@ -19,6 +19,7 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
           [name]: value
         })
     }
+    //
 
     const handleSubmit = (event) => {
       event.preventDefault();

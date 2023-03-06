@@ -7,9 +7,6 @@ import './styles.scss';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 const Card = (props) => {
-<<<<<<< HEAD
-    
-=======
 
     const [isFavorite, setIsFavorite] = useState(false);
     const token = localStorage.getItem('token');
@@ -31,7 +28,6 @@ const Card = (props) => {
     };
 
     console.log(props.isLogged)
->>>>>>> dev
     return (
         <div className="Card" id={props.id}>
             <Link to={`/stretches/${props.link}`} className="card" title={props.title}>
