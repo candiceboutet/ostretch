@@ -55,7 +55,7 @@ const Bookmarks = () => {
             </div>
          ))
         }
-        <Card title="Ajouter un favoris" img={plus} link={"/stretches"}/>
+        <Card title="Ajouter un favori" img={plus} link={" "}/>
         </div>
 
    </div>
