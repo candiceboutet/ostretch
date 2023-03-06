@@ -62,6 +62,7 @@ export default class Stretches extends Component {
                                 {
                                     filterData.map((stretch) => (
                                         <Card
+                                            id={stretch.id}
                                             title={stretch.title}
                                             description={stretch.description}
                                             img={stretch.main_image}
@@ -69,6 +70,7 @@ export default class Stretches extends Component {
                                             hover={stretch.title}
                                             key={stretch.id}
                                             link={stretch.id}
+                                            isLogged={this.props.isLogged}
                                         />
                                     ))
                                 }

@@ -21,7 +21,7 @@ const handleUsernameChange = (e) => {
 }
 
 const handleEmailChange = (e) => {
-    setEmail(e.target.value)
+    setEmail(e.target.value.toLowerCase())
     setErrorInput(false)
 }
 
