@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import Error404 from './pages/Error404/error404';
 import MySpace from './pages/MySpace';
 import Formulaire from './pages/Contact/Formulaire';
+import Footer from './components/Footer/Footer';
 
 
 const App = () => {
@@ -44,6 +45,7 @@ const handleLogout = () => {
         }
         <Route path='/*' element={<Error404 />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
