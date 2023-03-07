@@ -1,6 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
+// Pages
+
 import Home from './pages/Home';
 import Stretch from './pages/Stretch';
 import Stretches from './pages/Stretches';
@@ -13,6 +16,7 @@ import Formulaire from './pages/Contact/Formulaire';
 
 
 const App = () => {
+
   const [user, setUser]= useState('');
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
