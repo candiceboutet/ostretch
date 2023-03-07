@@ -18,7 +18,7 @@ export default class Stretches extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/stretches')
+        axios.get('http://localhost:3000/stretches')
             .then(response => {
                 let stretches = response.data;
                 this.setState({ stretches })

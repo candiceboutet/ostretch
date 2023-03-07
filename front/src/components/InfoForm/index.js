@@ -38,14 +38,14 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
       const token = localStorage.getItem('token'); // Récupérer le jeton d'authentification stocké dans le stockage local
       console.log(token)
 
-      axios.patch('http://localhost:3001/user/me', updatedData, {
+      axios.patch('http://localhost:3000/user/me', updatedData, {
       headers: {
         'Authorization': `Bearer ${token}`, // Ajouter le jeton d'authentification à l'en-tête de la demande
         "Content-Type": "application/json"
       }
     })
       .then(response => {
-        axios.get('http://localhost:3001/user/me', {
+        axios.get('http://localhost:3000/user/me', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -96,7 +96,7 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
 
         <button className="modify-btn" >Enregistrer</button>
       <p>Vous souhaitez supprimer définivement votre compte?</p>
-        <div className="delete-account-btn" onClick={handleDelete}>Suprimer</div>
+        <div className="delete-account-btn" onClick={handleDelete}>Supprimer</div>
     </form> 
     )
 }
