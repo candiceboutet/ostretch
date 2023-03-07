@@ -4,8 +4,8 @@ import plus from '../../assets/img/add-icon.png'
 import { useState, useEffect } from 'react';
 
 const Bookmarks = () => {
-    const [bookmarks, setBookmarks] = useState([]);
-    const token = localStorage.getItem('token');
+  const [bookmarks, setBookmarks] = useState([]);
+  const token = localStorage.getItem('token');
 
     useEffect(()=>{
         const config = {
@@ -40,26 +40,26 @@ const Bookmarks = () => {
         <div className="bookmarks-container">
         <div className='bookmarks-cards'>
         {
-            bookmarks.map((stretch) => (
+          bookmarks.map((stretch) => (
             <div key={stretch.id} className='card-container'>
-            <Card
-            title={stretch.title}
-            description={stretch.description}
-            img={stretch.main_image}
-            alt={stretch.title}
-            hover={stretch.title}
-            key={stretch.id}
-            link={stretch.id}
+              <Card
+              title={stretch.title}
+              description={stretch.description}
+              img={stretch.main_image}
+              alt={stretch.title}
+              hover={stretch.title}
+              key={stretch.id}
+              link={stretch.id}
             />
             <button className='delete-btn' onClick={()=>handleDelete(stretch.id)}>Supprimer</button>
             </div>
-         ))
+          ))
         }
-        <Card title="Ajouter un favoris" img={plus} link={""}/>
+        <Card title="Ajouter un favoris" img={plus} link={""} />
         </div>
 
-   </div>
-    )
+    </div>
+  )
 }
 
 export default Bookmarks;
