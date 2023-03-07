@@ -42,20 +42,20 @@ const Bookmarks = () => {
           bookmarks.map((stretch) => (
             <div key={stretch.id} className='card-container'>
               <Card
-                title={stretch.title}
-                description={stretch.description}
-                img={stretch.main_image}
-                alt={stretch.title}
-                hover={stretch.title}
-                key={stretch.id}
-                link={stretch.id}
-              />
-              <button className='delete-btn' onClick={() => handleDelete(stretch.id)}>X</button>
+              title={stretch.title}
+              description={stretch.description}
+              img={stretch.main_image}
+              alt={stretch.title}
+              hover={stretch.title}
+              key={stretch.id}
+              link={stretch.id}
+            />
+            <button className='delete-btn' onClick={()=>handleDelete(stretch.id)}>Supprimer</button>
             </div>
           ))
         }
         <Card title="Ajouter un favoris" img={plus} link={""} />
-      </div>
+        </div>
 
     </div>
   )

@@ -16,7 +16,7 @@ const [error, setError] = useState(null);
 
 
 const handleEmailChange = (event) => {
-    setEmail(event.target.value)
+    setEmail(event.target.value.toLowerCase())
 }
 const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -24,6 +24,7 @@ const handlePasswordChange = (event) => {
 
 const handleSubmit = async (e) =>{
     e.preventDefault();
+    // setEmail(email.toLowerCase);
     try {
 
         const response = await axios.post('http://localhost:3001/login', {         
@@ -53,7 +54,7 @@ const handleSubmit = async (e) =>{
     return (
 <div className="login">
         <div className="box-container">
-            <img src={logo}></img>
+            <img src={logo} alt="" />
             <h2>Se connecter</h2>
             {
             error ? <div className='error'> Mauvaise adresse email et/ou mot de passe </div> : null
