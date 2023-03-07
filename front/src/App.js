@@ -1,8 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Pages
+
 import Home from './pages/Home';
 import Stretch from './pages/Stretch';
 import Stretches from './pages/Stretches';
@@ -16,17 +17,27 @@ import Footer from './components/Footer/Footer';
 
 
 const App = () => {
-  const [user, setUser]= useState('')
-  const [isLogged, setIsLogged] = useState(false)
+
+  const [user, setUser]= useState('');
+  const [isLogged, setIsLogged] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  console.log(user.role_id)
+  console.log(isAdmin)
+
   const handleLogin = (item) => {
     setUser(item);
-    setIsLogged(true)
-    console.log('Connecté')
+    setIsLogged(true);
+    console.log("Connecté");
+    if (item.role_id === 1) {
+      setIsAdmin(true);
+    }
   }
   
 const handleLogout = () => {
   setIsLogged(false);
   setUser('');
+  setIsAdmin(false);
   localStorage.clear();
 }
 
@@ -36,7 +47,7 @@ const handleLogout = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/stretches' element={<Stretches isLogged={isLogged} />} />
-        <Route path='/stretches/:id' element={<Stretch />} />
+        <Route path='/stretches/:id' element={<Stretch isAdmin={isAdmin} isLogged={isLogged}/>} />
         <Route path='/login' element={<Login onSubmitLoginForm={handleLogin} />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/contact' element={<Formulaire />} />
