@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // Pages
 
@@ -22,7 +22,6 @@ const App = () => {
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  console.log(user.role_id)
   console.log(isAdmin)
 
   const handleLogin = (item) => {

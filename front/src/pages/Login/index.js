@@ -16,7 +16,7 @@ const [error, setError] = useState(null);
 
 
 const handleEmailChange = (event) => {
-    setEmail(event.target.value.toLowerCase())
+    setEmail(event.target.value)
 }
 const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -24,7 +24,6 @@ const handlePasswordChange = (event) => {
 
 const handleSubmit = async (e) =>{
     e.preventDefault();
-    // setEmail(email.toLowerCase);
     try {
 
         const response = await axios.post('http://localhost:3001/login', {         
