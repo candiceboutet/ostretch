@@ -13,7 +13,7 @@ const Bookmarks = () => {
             headers: { Authorization: `Bearer ${token}` }
           };
       
-          axios.get(`http://localhost:3000/user/me/stretches`, config)
+          axios.get(`http://localhost:3002/user/me/stretches`, config)
             .then(response => {
               setBookmarks(response.data);
             })
@@ -27,7 +27,7 @@ const Bookmarks = () => {
             const config = {
                 headers: { Authorization: `Bearer ${token}` }
               };
-              axios.delete(`http://localhost:3000/user/me/stretches/${id}`, config)
+              axios.delete(`http://localhost:3002/user/me/stretches/${id}`, config)
               .then(response => {
                 setBookmarks(bookmarks.filter(bookmark => bookmark.id !== id));
               })

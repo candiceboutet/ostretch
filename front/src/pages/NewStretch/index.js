@@ -23,7 +23,7 @@ const NewStretch = () => {
         if (userValue.title === '' || userValue.description_content === '') {
           setErrorInput(true)
           } else {
-        axios.post(`http://localhost:3000/stretches`, userValue, {
+        axios.post(`http://localhost:3002/stretches`, userValue, {
         headers: {
           'Authorization': `Bearer ${token}`, 
           "Content-Type": "application/json"

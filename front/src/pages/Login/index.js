@@ -27,7 +27,7 @@ const handleSubmit = async (e) =>{
     // setEmail(email.toLowerCase);
     try {
 
-        const response = await axios.post('http://localhost:3000/login', {         
+        const response = await axios.post('http://localhost:3002/login', {         
         email: email,
         password: password });
   
@@ -35,7 +35,7 @@ const handleSubmit = async (e) =>{
         localStorage.setItem('token', response.data.token);
   
         // Effectue une requête Axios authentifiée ultérieure en incluant le token dans le header Authorization
-        const authenticatedRequest = await axios.get('http://localhost:3000/user/me', {
+        const authenticatedRequest = await axios.get('http://localhost:3002/user/me', {
           headers: { 'Authorization': 'Bearer ' + response.data.token }
         });
       
