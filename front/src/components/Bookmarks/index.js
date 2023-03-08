@@ -3,6 +3,7 @@ import axios from 'axios';
 import plus from '../../assets/img/add-icon.png'
 import { useState, useEffect } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 const Bookmarks = () => {
   const [bookmarks, setBookmarks] = useState([]);
