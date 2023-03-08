@@ -51,7 +51,7 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
           },
         })
         .then((response) => {
-          const userFound = response.data.userFound;
+          const userFound = response.data.filtredUserInfo;
           setUser(userFound);
           console.log(user);
         })
@@ -96,9 +96,7 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
 
         <button className="modify-btn" >Enregistrer</button>
       <p>Vous souhaitez supprimer définivement votre compte?</p>
-
         <div className="delete-account-btn" onClick={handleDelete}>Supprimer</div>
-
     </form> 
     )
 }

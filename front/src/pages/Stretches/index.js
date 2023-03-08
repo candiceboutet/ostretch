@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Component } from 'react';
+import { NavLink } from "react-router-dom";
 
 // Components
 import Wrapper from '../../components/Wrapper';
@@ -7,6 +8,7 @@ import Card from '../../components/Card';
 
 // Styles
 import './styles.scss';
+import { AiFillPlusCircle } from 'react-icons/ai';
 
 export default class Stretches extends Component {
   constructor(props) {
@@ -19,12 +21,12 @@ export default class Stretches extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3001/stretches').then((response) => {
+    axios.get('http://localhost:3000/stretches').then((response) => {
       let stretches = response.data;
       this.setState({ stretches });
     });
 
-    axios.get('http://localhost:3001/categories').then((response) => {
+    axios.get('http://localhost:3000/categories').then((response) => {
       let categories = response.data.reduce((acc, category) => {
         acc[category.id] = category.name;
         return acc;
@@ -71,8 +73,14 @@ export default class Stretches extends Component {
             onChange={this.handleSearch}
           />
         </div>
+        {this.props.isAdmin ? (
+                  <div className='add-container'>
+                  <NavLink to="/new-stretch" className="add-stretch-btn"> <AiFillPlusCircle /> Ajouter un étirement </NavLink>
+                  </div>
+        ) : null}
 
         <main>
+          
           <div className='stretches-container'>
             {Object.keys(stretchesByCategory).map((categoryId) => (
               <div key={categoryId} className='category'>

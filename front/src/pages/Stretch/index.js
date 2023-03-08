@@ -18,8 +18,7 @@ const Stretch = ({isLogged, isAdmin}) => {
     console.log(stretch)
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/stretches/${id}`)
-
+        axios.get(`http://localhost:3000/stretches/${id}`)
             .then(response => {
                 setStretch(response.data)
             })

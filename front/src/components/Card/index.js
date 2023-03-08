@@ -19,8 +19,7 @@ const Card = (props) => {
             headers: { Authorization: `Bearer ${token}` }
           };
           console.log(config);
-
-          axios.post(`http://localhost:3001/user/me/stretches/${props.id}`,{}, config)
+          axios.post(`http://localhost:3000/user/me/stretches/${props.id}`,{}, config)
             .then(response => {
               setIsFavorite(true);
             })
@@ -29,7 +28,6 @@ const Card = (props) => {
             }, [token]);
     };
 
-    console.log(props.isLogged)
     return (
         <div className="Card" id={props.id}>
             <Link to={`/stretches/${props.link}`} className="card" title={props.title}>
