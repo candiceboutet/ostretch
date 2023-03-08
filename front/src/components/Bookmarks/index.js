@@ -2,6 +2,7 @@ import Card from '../Card'
 import axios from 'axios';
 import plus from '../../assets/img/add-icon.png'
 import { useState, useEffect } from 'react';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 const Bookmarks = () => {
   const [bookmarks, setBookmarks] = useState([]);
@@ -51,7 +52,7 @@ const Bookmarks = () => {
               key={stretch.id}
               link={stretch.id}
             />
-            <button className='delete-btn' onClick={()=>handleDelete(stretch.id)}>Supprimer</button>
+            <button className='delete-btn' onClick={()=>handleDelete(stretch.id)}><AiOutlineDelete /></button>
             </div>
           ))
         }

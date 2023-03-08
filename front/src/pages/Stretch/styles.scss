@@ -11,7 +11,7 @@
         margin: auto;
         margin-top: 2em;
         width: 70%;
-
+ 
         text-align: center;
         font-size: 2rem;
         font-weight: 700;
@@ -21,6 +21,7 @@
             height: 500px;
             border-radius: 10%;
             object-fit: cover;
+
         }
 
         & .stretch-infos {
@@ -36,4 +37,22 @@
             }
         }
     }
+}
+.stretch-image-container{
+    position: relative;
+}
+.favorite-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 30px;
+    left: 100px;
+    margin-left: 1em;
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1));
+    transition: color 300ms ease;
+    cursor: pointer;
+    color: #7867B1;
+
 }

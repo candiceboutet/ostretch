@@ -28,7 +28,6 @@ const Card = (props) => {
             }, [token]);
     };
 
-    console.log(props.isLogged)
     return (
         <div className="Card" id={props.id}>
             <Link to={`/stretches/${props.link}`} className="card" title={props.title}>

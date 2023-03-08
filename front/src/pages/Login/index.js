@@ -39,7 +39,7 @@ const handleSubmit = async (e) =>{
           headers: { 'Authorization': 'Bearer ' + response.data.token }
         });
       
-        const userFound = authenticatedRequest.data.userFound;
+        const userFound = authenticatedRequest.data.filtredUserInfo;
         onSubmitLoginForm(userFound);
         navigate("/");
         
