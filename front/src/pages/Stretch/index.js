@@ -67,7 +67,7 @@ const Stretch = ({isLogged, isAdmin}) => {
                         className="stretch-image"
                     />
                 {isLogged ? (
-                <span onClick={handleFavorite} className="favorite-icon">
+                <span onClick={handleFavorite} className="fav-icon">
                 { isFavorite ? <AiFillHeart className='filled-icon' /> : <AiOutlineHeart />}
                 </span>) : null
                 }
