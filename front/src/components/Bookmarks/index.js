@@ -4,6 +4,7 @@ import plus from '../../assets/img/add-icon.png'
 import { useState, useEffect } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 
+
 const Bookmarks = () => {
   const [bookmarks, setBookmarks] = useState([]);
   const token = localStorage.getItem('token');
@@ -27,6 +28,7 @@ const Bookmarks = () => {
             const config = {
                 headers: { Authorization: `Bearer ${token}` }
               };
+              
               axios.delete(`${process.env.REACT_APP_BASE_URL}/user/me/stretches/${id}`, config)
               .then(response => {
                 setBookmarks(bookmarks.filter(bookmark => bookmark.id !== id));

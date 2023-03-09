@@ -30,6 +30,7 @@ const StretchForm = ({stretch, setStretch, id, setOnEdit}) => {
       }
     })
       .then(response => {
+
         axios.get(`${process.env.REACT_APP_BASE_URL}/stretches/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,

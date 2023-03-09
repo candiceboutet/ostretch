@@ -32,6 +32,7 @@ const Stretch = ({isLogged, isAdmin}) => {
             headers: { Authorization: `Bearer ${token}` }
           };
           console.log(config);
+
           axios.post(`${process.env.REACT_APP_BASE_URL}/user/me/stretches/${id}`,{}, config)
             .then(response => {
               setIsFavorite(true);
@@ -44,6 +45,7 @@ const Stretch = ({isLogged, isAdmin}) => {
         const config = {
             headers: { Authorization: `Bearer ${token}` }
           };
+
           axios.delete(`${process.env.REACT_APP_BASE_URL}/stretches/${id}`, config)
           .then(response => {
             navigate("/stretches")

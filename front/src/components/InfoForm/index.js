@@ -45,6 +45,7 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
       }
     })
       .then(response => {
+
         axios.get(`${process.env.REACT_APP_BASE_URL}/user/me`, {
           headers: {
             Authorization: `Bearer ${token}`,

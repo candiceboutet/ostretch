@@ -46,7 +46,7 @@ const handleSubmit = async (e) =>{
         setErrorConfirm(true);
         } else {
     try {
-        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/user`, {         
+        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/user`, {     
         username,    
         email,
         password,
