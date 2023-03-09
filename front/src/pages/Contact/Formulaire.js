@@ -56,9 +56,9 @@ const Formulaire = () => {
             <div>
                 <button type="submit">Envoyer mon message</button>
             </div>
-        </form>)
+        </form>
+    );
 };
-
 
 
 export default Formulaire;

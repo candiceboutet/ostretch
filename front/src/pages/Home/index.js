@@ -24,7 +24,7 @@ const Home = () => {
             </header>
 
             <main>
-                <HumanBody />
+                <HumanBody className="HumanBody" />
             </main>
         </>
     );
