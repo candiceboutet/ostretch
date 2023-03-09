@@ -7,7 +7,6 @@ import HumanBody from '../../components/HumanBody/HumanBody';
 
 // Styles
 import './home.scss';
-import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
     return (

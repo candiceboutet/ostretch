@@ -20,7 +20,7 @@ const Formulaire = () => {
             message
         };
 
-        axios.post('http://localhost:3002/contact', formData)
+        axios.post(`${process.env.REACT_APP_BASE_URL}/contact`, formData)
             .then(response => response.data)
             .then(data => {
                 if (data === 'success') {

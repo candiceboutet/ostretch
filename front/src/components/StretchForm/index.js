@@ -23,14 +23,14 @@ const StretchForm = ({stretch, setStretch, id, setOnEdit}) => {
 
         const token = localStorage.getItem('token'); // Récupérer le jeton d'authentification stocké dans le stockage local
 
-      axios.patch(`http://localhost:3002/stretches/${id}`, updatedData, {
+      axios.patch(`${process.env.REACT_APP_BASE_URL}/stretches/${id}`, updatedData, {
       headers: {
         'Authorization': `Bearer ${token}`, // Ajouter le jeton d'authentification à l'en-tête de la demande
         "Content-Type": "application/json"
       }
     })
       .then(response => {
-        axios.get(`http://localhost:3002/stretches/${id}`, {
+        axios.get(`${process.env.REACT_APP_BASE_URL}/stretches/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
