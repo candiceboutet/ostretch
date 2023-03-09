@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
 // Pages
-
 import Home from './pages/Home';
 import Stretch from './pages/Stretch';
 import Stretches from './pages/Stretches';
