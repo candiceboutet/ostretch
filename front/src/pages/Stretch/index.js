@@ -18,7 +18,7 @@ const Stretch = ({isLogged, isAdmin}) => {
     console.log(stretch)
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/stretches/${id}`)
+        axios.get(`${process.env.REACT_APP_BASE_URL}/stretches/${id}`)
             .then(response => {
                 setStretch(response.data)
             })
@@ -32,7 +32,7 @@ const Stretch = ({isLogged, isAdmin}) => {
             headers: { Authorization: `Bearer ${token}` }
           };
           console.log(config);
-          axios.post(`http://localhost:3000/user/me/stretches/${id}`,{}, config)
+          axios.post(`${process.env.REACT_APP_BASE_URL}/user/me/stretches/${id}`,{}, config)
             .then(response => {
               setIsFavorite(true);
             })
@@ -44,7 +44,7 @@ const Stretch = ({isLogged, isAdmin}) => {
         const config = {
             headers: { Authorization: `Bearer ${token}` }
           };
-          axios.delete(`http://localhost:3000/stretches/${id}`, config)
+          axios.delete(`${process.env.REACT_APP_BASE_URL}/stretches/${id}`, config)
           .then(response => {
             navigate("/stretches")
           })

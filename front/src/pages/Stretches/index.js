@@ -21,12 +21,12 @@ export default class Stretches extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/stretches').then((response) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/stretches`).then((response) => {
       let stretches = response.data;
       this.setState({ stretches });
     });
 
-    axios.get('http://localhost:3000/categories').then((response) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/categories`).then((response) => {
       let categories = response.data.reduce((acc, category) => {
         acc[category.id] = category.name;
         return acc;
