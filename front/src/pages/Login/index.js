@@ -16,7 +16,7 @@ const [error, setError] = useState(null);
 
 
 const handleEmailChange = (event) => {
-    setEmail(event.target.value.toLowerCase())
+    setEmail(event.target.value)
 }
 const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -24,10 +24,9 @@ const handlePasswordChange = (event) => {
 
 const handleSubmit = async (e) =>{
     e.preventDefault();
-    // setEmail(email.toLowerCase);
     try {
 
-        const response = await axios.post('http://localhost:3000/login', {         
+        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, {   
         email: email,
         password: password });
   
@@ -35,7 +34,7 @@ const handleSubmit = async (e) =>{
         localStorage.setItem('token', response.data.token);
   
         // Effectue une requête Axios authentifiée ultérieure en incluant le token dans le header Authorization
-        const authenticatedRequest = await axios.get('http://localhost:3000/user/me', {
+        const authenticatedRequest = await axios.get(`${process.env.REACT_APP_BASE_URL}/user/me`, {
           headers: { 'Authorization': 'Bearer ' + response.data.token }
         });
       

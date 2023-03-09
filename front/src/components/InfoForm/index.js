@@ -38,14 +38,15 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
       const token = localStorage.getItem('token'); // Récupérer le jeton d'authentification stocké dans le stockage local
       console.log(token)
 
-      axios.patch('http://localhost:3000/user/me', updatedData, {
+      axios.patch(`${process.env.REACT_APP_BASE_URL}/user/me`, updatedData, {
       headers: {
         'Authorization': `Bearer ${token}`, // Ajouter le jeton d'authentification à l'en-tête de la demande
         "Content-Type": "application/json"
       }
     })
       .then(response => {
-        axios.get('http://localhost:3000/user/me', {
+
+        axios.get(`${process.env.REACT_APP_BASE_URL}/user/me`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -69,7 +70,7 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
       const config = {
         headers: { Authorization: `Bearer ${token}` }
       };
-      axios.delete(`http://localhost:3002/user/me`, config)
+      axios.delete(`${process.env.REACT_APP_BASE_URL}/user/me`, config)
       .then(response => {
         setUser("");
         localStorage.clear();
