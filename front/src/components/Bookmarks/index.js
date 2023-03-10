@@ -28,8 +28,7 @@ const Bookmarks = () => {
             const config = {
                 headers: { Authorization: `Bearer ${token}` }
               };
-              
-              axios.delete(`${process.env.REACT_APP_BASE_URL}/user/me/stretches/${id}`, config)
+              axios.delete(`http://localhost:3002/user/me/stretches/${id}`, config)
               .then(response => {
                 setBookmarks(bookmarks.filter(bookmark => bookmark.id !== id));
               })

@@ -78,6 +78,7 @@ export default class Stretches extends Component {
                 {
                   this.state.categories.map((category) => (
                     <div className='category' key={category.name}>
+                      <div id={category.name} />
                       <h2>{category.name}</h2>
                       <ul>
                         {
