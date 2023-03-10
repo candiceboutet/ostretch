@@ -70,37 +70,38 @@ const HumanBody = () => {
         <div className='main-body'>
             
             { isHeadOpen ? (<div className='head-cards'>
-                <Card title="Cou" link="#Cou"/>
+                <Card title="Cou" link="#Cou" img="https://www.espace-musculation.com/uploads/2010/03/douleur-cou.jpg" />
             </div>) : null }
 
             { isShoulderOpen ? (<div className='shoulder-cards'>
-                <Card title="Bras" link="#Bras"/>
+                <Card title="Bras" link="#Bras" img="https://st.depositphotos.com/1010613/2974/i/600/depositphotos_29749989-stock-photo-woman-having-arm-pain.jpg"/>
             </div>) : null }
 
             { isArmOpen ? (<div className='arm-cards'>
-                <Card title="Avant-Bras" link="#Avant-Bras"/>
+                <Card title="Avant-Bras" link="#Avant-Bras" img="https://www.paradisi.de/images/artikel/5101-0-800-450.jpg"/>
             </div>) : null }
             
             { isCheastOpen ? (<div className='cheast-cards'>
-                <Card title="Poitrine" link="#Poitrine"/>
-                <Card title="Dos" link="#Dos"/>
+                <Card title="Poitrine" link="#Poitrine" img="https://st.depositphotos.com/1594185/3718/i/600/depositphotos_37184619-stock-photo-chest-pain.jpg"/>
+                <Card title="Dos" link="#Dos" img="https://img.passeportsante.net/1200x675/2020-07-17/i95250-.jpeg"/>
             </div>) : null }
 
             { isStomachOpen ? (<div className='stomach-cards'>
-                <Card title="Ventre" link="#Ventre"/>
-                <Card title="Hanche" link="#Hanche"/>
+                <Card title="Ventre" link="#Ventre" img="https://cdn1.institut-kinesitherapie.paris/wp-content/uploads/2019/05/douleur-poitrine-entorse-costale-article-cover-ik-paris.jpg"/>
+                <Card title="Hanche" link="#Hanche" img="https://www.plus-saine-la-vie.com/wp-content/uploads/2016/10/douleur-reins-e1477409228463.jpg"/>/>
             </div>) : null }
 
             { isLegsOpen ? (<div className='legs-cards'>
                 <div className='left-legs-cards'>
-                <Card title="Fessier" link="#Fessier"/>
-                <Card title="Cuisse" link="#Cuisse"/>
+                <Card title="Fessier" link="#Fessier" img="https://www.reflexosteo.com/uploads/posts/514/pictures/4570/detail/douleur-a-la-fesse-et-osteopathie.jpeg?1624457850"/>
+                <Card title="Cuisse" link="#Cuisse" img="https://resources.osteo2ls.com/blog/articles/2020/cruralgie-large.jpg"/>/>
                 </div>
                 <div className='right-legs-cards'>
-                <Card title="Jambe" link="#Jambe"/>
-                <Card title="Pied" link="#Pied"/>
+                <Card title="Jambe" link="#Jambe" img="https://st4.depositphotos.com/4218696/29549/i/600/depositphotos_295495728-stock-photo-man-with-injured-calf-massaging.jpg"/>/>
+                <Card title="Pied" link="#Pied" img="https://aidealautonomie.net/img/cms/douleurs-pieds-les-solutions.jpg"/>
                 </div>
                 </div> ) : null }
+
 
 
         <div className='HumanBody'>
