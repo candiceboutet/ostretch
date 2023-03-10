@@ -70,33 +70,37 @@ const HumanBody = () => {
         <div className='main-body'>
             
             { isHeadOpen ? (<div className='head-cards'>
-                <Card title="Cou" link=" "/>
+                <Card title="Cou" link="#Cou"/>
             </div>) : null }
 
             { isShoulderOpen ? (<div className='shoulder-cards'>
-                <Card title="Bras" link=" "/>
+                <Card title="Bras" link="#Bras"/>
             </div>) : null }
 
             { isArmOpen ? (<div className='arm-cards'>
-                <Card title="Avant-Bras" link=" "/>
+                <Card title="Avant-Bras" link="#Avant-Bras"/>
             </div>) : null }
             
             { isCheastOpen ? (<div className='cheast-cards'>
-                <Card title="Poitrine" link=" "/>
-                <Card title="Dos" link=" "/>
+                <Card title="Poitrine" link="#Poitrine"/>
+                <Card title="Dos" link="#Dos"/>
             </div>) : null }
 
             { isStomachOpen ? (<div className='stomach-cards'>
-                <Card title="Ventre" link=" "/>
-                <Card title="Hanche" link=" "/>
+                <Card title="Ventre" link="#Ventre"/>
+                <Card title="Hanche" link="#Hanche"/>
             </div>) : null }
 
             { isLegsOpen ? (<div className='legs-cards'>
-                <Card title="Fessier" link=" "/>
-                <Card title="Cuisse" link=" "/>
-                <Card title="Jambe" link=" "/>
-                <Card title="Pied" link=" "/>
-            </div>) : null }
+                <div className='left-legs-cards'>
+                <Card title="Fessier" link="#Fessier"/>
+                <Card title="Cuisse" link="#Cuisse"/>
+                </div>
+                <div className='right-legs-cards'>
+                <Card title="Jambe" link="#Jambe"/>
+                <Card title="Pied" link="#Pied"/>
+                </div>
+                </div> ) : null }
 
 
         <div className='HumanBody'>
