@@ -49,7 +49,7 @@ const handleLogout = () => {
         <Route path='/signup' element={<Signup />} />
         <Route path='/contact' element={<Formulaire />} />
         {
-        isLogged ? <Route path='/my-space' element={<MySpace user={user} setUser={setUser} />} /> : <Route path='/my-space' element={<Login />} />
+        isLogged ? <Route path='/my-space' element={<MySpace user={user} setUser={setUser} setIsLogged={setIsLogged} />} /> : <Route path='/my-space' element={<Login />} />
         }
         {
         isAdmin ? <Route path='/new-stretch' element={<NewStretch />} /> : <Route path='/my-space' element={<Login />} />
