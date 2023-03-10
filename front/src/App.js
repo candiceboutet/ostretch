@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
 // Pages
-
 import Home from './pages/Home';
 import Stretch from './pages/Stretch';
 import Stretches from './pages/Stretches';
@@ -14,6 +13,7 @@ import Error404 from './pages/Error404/error404';
 import MySpace from './pages/MySpace';
 import Formulaire from './pages/Contact/Formulaire';
 import NewStretch from './pages/NewStretch';
+import Footer from './components/Footer/Footer';
 
 
 const App = () => {
@@ -56,6 +56,7 @@ const handleLogout = () => {
         }
         <Route path='/*' element={<Error404 />} />
       </Routes>
+      <Footer />
     </div>
   );
 };

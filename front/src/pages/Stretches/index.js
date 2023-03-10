@@ -16,58 +16,50 @@ export default class Stretches extends Component {
     this.state = {
       stretches: [],
       categories: [],
-      searchTerm: '',
-    };
+      searchTerm: ''
+    }
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3002/stretches').then((response) => {
-      let stretches = response.data;
-      this.setState({ stretches });
-    });
+    axios.get(`${process.env.REACT_APP_BASE_URL}/stretches`)
+      .then(response => {
+        let stretches = response.data;
+        this.setState({ stretches })
+      })
 
-    axios.get('http://localhost:3002/categories').then((response) => {
-      let categories = response.data.reduce((acc, category) => {
-        acc[category.id] = category.name;
-        return acc;
-      }, {});
-      this.setState({ categories });
-    });
+    axios.get(`${process.env.REACT_APP_BASE_URL}/categories`)
+      .then(response => {
+        let categories = response.data;
+        this.setState({ categories })
+      })
   }
 
+
   handleSearch = (event) => {
-    this.setState({ searchTerm: event.target.value });
-  };
+    this.setState({ searchTerm: event.target.value })
+  }
 
   filterData = () => {
-    const { searchTerm } = this.state;
+    const { searchTerm } = this.state
     return this.state.stretches.filter((rawdata) => {
-      return rawdata.title.toLowerCase().includes(searchTerm.toLowerCase());
-    });
-  };
+      return rawdata.title.toLowerCase().includes(searchTerm.toLowerCase())
+    })
+  }
 
   render() {
     const filterData = this.filterData();
-
-    const stretchesByCategory = {};
-    filterData.forEach((stretch) => {
-      if (!stretchesByCategory[stretch.category_id]) {
-        stretchesByCategory[stretch.category_id] = [];
-      }
-      stretchesByCategory[stretch.category_id].push(stretch);
-    });
-
+    console.log(this.filterData())
     return (
       <div className='Stretches'>
         <div>
           <Wrapper
             wrapperTitle='Tous nos étirements disponibles'
-            wrapperDescription='Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus.'
+            wrapperDescription="Lors d'un étirement, n'allez pas au delà de vos limites physiologique. L'étirement doit être fait en douceur et doit uniquement mettre en tension le muscle correspondant."
           />
           <input
-            type='search'
-            name='search'
-            id='searchInput'
+            type="search"
+            name="search"
+            id="searchInput"
             placeholder='Votre recherche...'
             value={this.state.searchTerm}
             onChange={this.handleSearch}
@@ -82,29 +74,38 @@ export default class Stretches extends Component {
         <main>
           
           <div className='stretches-container'>
-            {Object.keys(stretchesByCategory).map((categoryId) => (
-              <div key={categoryId} className='category'>
-                <h2>{this.state.categories[categoryId]}</h2>
-                <ul>
-                  {stretchesByCategory[categoryId].map((stretch) => (
-                    <Card
-                      id={stretch.id}
-                      title={stretch.title}
-                      description={stretch.description}
-                      img={stretch.main_image}
-                      alt={stretch.title}
-                      hover={stretch.title}
-                      key={stretch.id}
-                      link={stretch.id}
-                      isLogged={this.props.isLogged}
-                    />
-                  ))}
-                </ul>
-              </div>
-            ))}
+              <ul>
+                {
+                  this.state.categories.map((category) => (
+                    <div className='category' key={category.name}>
+                      <h2>{category.name}</h2>
+                      <ul>
+                        {
+                          filterData
+                            .filter(stretch => stretch.categorie_id === category.id)
+                            .map((stretch) => (
+                              <Card
+                                id={stretch.id}
+                                title={stretch.title}
+                                description={stretch.description}
+                                img={stretch.main_image}
+                                alt={stretch.title}
+                                hover={stretch.title}
+                                key={stretch.id}
+                                link={stretch.id}
+                                isLogged={this.props.isLogged}
+                              />
+                            ))
+                        }
+                      </ul>
+                    </div>
+                  ))
+                }
+  
+              </ul>
           </div>
         </main>
       </div>
-    );
+    )
   }
 }
