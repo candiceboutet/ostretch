@@ -1,8 +1,8 @@
 // Import des variables
 @import './vars';
+@import './responsive';
 
 body {
-    padding: 1em 0;
     font-family: 'Poppins', sans-serif;
     background: rgb(234,226,247);
     background: linear-gradient(90deg, rgba(234,226,247,1) 0%, rgba(253,236,214,1) 100%);
