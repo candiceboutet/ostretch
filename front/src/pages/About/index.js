@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.scss';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import fred from '/Users/candiceboutet/Documents/WORK/CODE/PROJECTS/REACT/APO/projet-06-o-stretch-front/front/src/assets/img/fred.JPG';
-import candice from '/Users/candiceboutet/Documents/WORK/CODE/PROJECTS/REACT/APO/projet-06-o-stretch-front/front/src/assets/img/candice.jpeg'
-import marie from '/Users/candiceboutet/Documents/WORK/CODE/PROJECTS/REACT/APO/projet-06-o-stretch-front/front/src/assets/img/marie.JPG'
-import ludo from '/Users/candiceboutet/Documents/WORK/CODE/PROJECTS/REACT/APO/projet-06-o-stretch-front/front/src/assets/img/ludo.jpg'
+import fred from '../../assets/img/fred.JPG';
+import candice from '../../assets/img/candice.jpeg'
+import marie from '../../assets/img/marie.JPG'
+import ludo from '../../assets/img/ludo.jpg'
 
 const About = () => {
   return (
