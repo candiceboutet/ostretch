@@ -69,29 +69,29 @@ const HumanBody = () => {
     return (
         <div className='main-body'>
             
-            { isHeadOpen ? (<div className='head-cards'>
+            { isHeadOpen ? (<div className='head-cards' id='category-cards'>
                 <Card title="Cou" link="#Cou" img="https://i.ibb.co/SP7PD5V/6.webp" />
             </div>) : null }
 
-            { isShoulderOpen ? (<div className='shoulder-cards'>
+            { isShoulderOpen ? (<div className='shoulder-cards' id='category-cards'>
                 <Card title="Bras" link="#Bras" img="https://i.ibb.co/JsnqQLP/7.webp"/>
             </div>) : null }
 
-            { isArmOpen ? (<div className='arm-cards'>
+            { isArmOpen ? (<div className='arm-cards' id='category-cards'>
                 <Card title="Avant-Bras" link="#Avant-Bras" img="https://i.ibb.co/sHmyLHh/8.webp"/>
             </div>) : null }
             
-            { isCheastOpen ? (<div className='cheast-cards'>
+            { isCheastOpen ? (<div className='cheast-cards' id='category-cards'>
                 <Card title="Poitrine" link="#Poitrine" img="https://i.ibb.co/mCZJnyZ/1.webp"/>
                 <Card title="Dos" link="#Dos" img="https://i.ibb.co/pXnyyfr/10.webp"/>
             </div>) : null }
 
-            { isStomachOpen ? (<div className='stomach-cards'>
+            { isStomachOpen ? (<div className='stomach-cards' id='category-cards'>
                 <Card title="Ventre" link="#Ventre" img="https://i.ibb.co/V3L3JRJ/5.jpg"/>
                 <Card title="Hanche" link="#Hanche" img="https://i.ibb.co/2MBwPNC/9.webp"/>
             </div>) : null }
 
-            { isLegsOpen ? (<div className='legs-cards'>
+            { isLegsOpen ? (<div className='legs-cards' id='category-cards'>
                 <div className='left-legs-cards'>
                 <Card title="Fessier" link="#Fessier" img="https://i.ibb.co/ZNVgwzH/douleur-a-la-fesse-et-osteopathie.webp"/>
                 <Card title="Cuisse" link="#Cuisse" img="https://i.ibb.co/WxvLmgL/2.jpg"/>
