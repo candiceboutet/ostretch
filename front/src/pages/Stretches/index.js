@@ -54,7 +54,7 @@ export default class Stretches extends Component {
         <div>
           <Wrapper
             wrapperTitle='Tous nos étirements disponibles'
-            wrapperDescription="Lors d'un étirement, n'allez pas au delà de vos limites physiologique. L'étirement doit être fait en douceur et doit uniquement mettre en tension le muscle correspondant."
+            wrapperDescription="Lors d'un étirement, n'allez pas au delà de vos limites physiologiques. L'étirement doit être fait en douceur et doit uniquement mettre en tension le muscle correspondant."
           />
           <input
             type="search"
