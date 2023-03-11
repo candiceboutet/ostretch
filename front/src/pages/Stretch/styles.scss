@@ -64,3 +64,11 @@
     margin-top: 30px;
     justify-content: space-between;
 }
+
+.infos-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
