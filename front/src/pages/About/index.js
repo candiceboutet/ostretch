@@ -10,6 +10,7 @@ import fred from '../../assets/img/fred.JPG';
 import candice from '../../assets/img/candice.jpeg'
 import marie from '../../assets/img/marie.JPG'
 import ludo from '../../assets/img/ludo.jpg'
+import andy from '../../assets/img/andy.jpg'
 
 const About = () => {
   return (
@@ -62,7 +63,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className='about-card'>
-                <img className='about-photo' src="" alt="" />
+                <img className='about-photo' src={andy} alt="" />
                     <div>
                         <p className='about-name'>Andy Vasseur</p>
                         <p>Référent technique et Développeur Frontend</p>
