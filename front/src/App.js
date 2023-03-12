@@ -1,11 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-
-const App = () => {
-  return (
-    <div className='App'>
-        <h1>O'Stretch</h1>
-=======
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -66,7 +59,6 @@ const handleLogout = () => {
         <Route path='/*' element={<Error404 />} />
       </Routes>
       <Footer />
->>>>>>> dev
     </div>
   );
 };
