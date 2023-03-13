@@ -1,28 +1,41 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+
+// Pages
 import Home from './pages/Home';
 import Stretch from './pages/Stretch';
 import Stretches from './pages/Stretches';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
-import { useState } from 'react';
 import Error404 from './pages/Error404/error404';
 import MySpace from './pages/MySpace';
+import Formulaire from './pages/Contact/Formulaire';
+import NewStretch from './pages/NewStretch';
+import Footer from './components/Footer/Footer';
+import About from './pages/About';
 
 
 const App = () => {
   const [user, setUser]= useState('')
   const [isLogged, setIsLogged] = useState(false)
-  console.log(user)
+  const [isAdmin, setIsAdmin] = useState(false)
+  console.log(isLogged)
+  
   const handleLogin = (item) => {
     setUser(item);
-    setIsLogged(true)
+    setIsLogged(true);
+    console.log("Connecté");
+    if (item.role_id === 1) {
+      setIsAdmin(true);
+    }
   }
   
 const handleLogout = () => {
   setIsLogged(false);
   setUser('');
+  setIsAdmin(false);
   localStorage.clear();
 }
 
@@ -31,17 +44,21 @@ const handleLogout = () => {
       <Navbar isLogged={isLogged} onLogout={handleLogout}/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/stretches' element={<Stretches />} />
-        <Route path='/stretch' element={<Stretch />} />
+        <Route path="about" element={<About />}/>
+        <Route path='/stretches' element={<Stretches isLogged={isLogged} isAdmin={isAdmin}/>} />
+        <Route path='/stretches/:id' element={<Stretch isAdmin={isAdmin} isLogged={isLogged}/>} />
         <Route path='/login' element={<Login onSubmitLoginForm={handleLogin} />} />
-        <Route path='/stretches/stretch' element={<Stretch />} />
-        <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/contact' element={<Formulaire />} />
         {
-        user ? <Route path='/my-space' element={<MySpace user={user} setUser={setUser} />} /> : <Route path='/my-space' element={<Login />} />
+        isLogged ? <Route path='/my-space' element={<MySpace user={user} setUser={setUser} setIsLogged={setIsLogged} />} /> : <Route path='/my-space' element={<Login />} />
+        }
+        {
+        isAdmin ? <Route path='/new-stretch' element={<NewStretch />} /> : <Route path='/my-space' element={<Login />} />
         }
         <Route path='/*' element={<Error404 />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
